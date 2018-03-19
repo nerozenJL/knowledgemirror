@@ -17,5 +17,3 @@ public interface userMapper {
     List<userEntity> getAll();
 }
 
-//hello
-//hhhhh
