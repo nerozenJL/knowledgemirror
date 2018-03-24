@@ -1,37 +1,63 @@
 <html>
 
 <head>
-
 <meta http-equiv="Content-Type" content="text/html; charset=gbk" />
-<title>个人知识体系系统—注册</title>
+<title>个人知识体系系统——注册</title>
 <link href="../css/styles.css" type="text/css" rel="stylesheet"/>
-<script src="../js/jquery-1.7.1.min.js"></script>
-<script src="../js/jquery-ui-1.8.10.custom.min.js"></script>
-</script>	
+<script src="../js/jquery-3.3.1.min.js"></script>
+<script src="../js/check.js"></script></script>	
 </head>
 <body style="background:none">	
 	<div id = "rg1">
 	  <div>
-	    <span id = "rg1_span">step 1:</span>
+	    <span id = "rgs1_span">个人知识体系系统——注册</span>
 	  </div>
 	  <div id = "rg1_text" >
-		<span>用户名</span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-		<input id = "rg1_input" style="width:300px;"></input>
+		<span>&nbsp&nbsp用户名</span><span style="color:red;">*</span><span>:&nbsp&nbsp</span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+		<input class="rg1_input" type = "text" id = "username_input" style="width:300px;"></input>
+		<br>
+		<div style="text-align:right;color:red;margin-right:10px;height:20px">
+		<span id = "username"></span>
+		</div>
+		<br>
+		<span id = ""></span>
+		<span>&nbsp&nbsp密 &nbsp&nbsp 码</span><span style="color:red;">*</span><span>:&nbsp&nbsp</span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+		<input type = "password"class="rg1_input" id = "password_input1" style="width:300px;"></input>
 		<br><br><br>
-		<span>密 &nbsp 码</span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-		<input id = "rg1_input" style="width:300px;"></input>
+		<span>重复密码</span><span style="color:red;">*</span><span>:&nbsp</span>&nbsp&nbsp&nbsp&nbsp
+		<input type = "password" class="rg1_input" id = "password_input2" style="width:300px;" onblur = "checkpassword()"></input>
+		<br>
+		<div style="text-align:right;color:red;margin-right:10px;height:20px;">
+		<span id = "password"></span>
+		</div>
+		<br>
+		<span>&nbsp&nbsp邮 &nbsp&nbsp 箱</span><span style="color:red;">*</span><span>:&nbsp&nbsp</span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+		<input class="rg1_input" type="text" id = "email_input" style="width:300px;" onblur = "checkemail()"></input>
+		<br>
+		<div style="text-align:right;color:red;margin-right:10px;height:20px;">
+		<span id = "email"></span>
+		</div>
+		<br>
+		<span>&nbsp&nbsp生 &nbsp&nbsp 日</span><span style="color:red;">*</span><span>:&nbsp&nbsp</span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+		<input class="rg1_input" id = "birth_input" style="width:300px;"></input>
 		<br><br><br>
-		<span>重复密码</span>&nbsp&nbsp&nbsp&nbsp
-		<input id = "rg1_input" style="width:300px;"></input>
+		<span>自我评价:</span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+		<textarea class = "rgs1_input" id = "self_assessment" style="width:300px;height:80px"></textarea>
 		<br><br><br>
-		<span>邮 &nbsp 箱</span>&nbsp&nbsp&nbsp&nbsp
-		<input id = "rg1_input" style="width:300px;"></input>
+		<span>教育背景:</span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+		<textarea class = "rgs1_input" id = "edu_background" style="width:300px;height:80px"></textarea>
 		<br><br><br>
-		<span>生 &nbsp 日</span>&nbsp&nbsp&nbsp&nbsp
-		<input id = "rg1_input" style="width:300px;"></input>
+		<span>个人经历:</span>&nbsp&nbsp&nbsp&nbsp
+		<textarea class = "rgs1_input" id = "personal_experience" style="width:300px;height:80px"></textarea>
+		<br><br><br>
+		<span>荣誉奖励:</span>&nbsp&nbsp&nbsp&nbsp
+		<textarea class = "rgs1_input" id = "honors_awards" style="width:300px;height:80px"></textarea>
+		<br><br><br>
+		<span>个人技能:</span>&nbsp&nbsp&nbsp&nbsp
+		<textarea class = "rgs1_input" id = "personal_skills" style="width:300px;height:80px"></textarea>
 	  </div>
 	  <div>
-		<button id="rg2_span" onclick="javascript:window.location.href='../html/register2.html' "><img src="../image/register/u32.png"/>&nbsp&nbsp下一步</button>
+		<button id="rgs2_span"><img src="../image/register/u32.png"/>&nbsp&nbsp完成</button>
 	  </div>
 	</div>
 

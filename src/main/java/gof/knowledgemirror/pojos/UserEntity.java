@@ -3,7 +3,7 @@ package gof.knowledgemirror.pojos;
 import java.io.Serializable;
 import java.util.Date;
 
-public class userEntity implements Serializable {
+public class UserEntity implements Serializable {
         private Integer id;
         private  String user_name;
         private String user_password;
