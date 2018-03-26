@@ -1,6 +1,6 @@
 package gof.knowledgemirror.mappers;
 
-import gof.knowledgemirror.pojos.userEntity;
+import gof.knowledgemirror.pojos.User;
 import org.apache.ibatis.annotations.Result;
 import org.apache.ibatis.annotations.Results;
 import org.apache.ibatis.annotations.Select;
@@ -14,5 +14,5 @@ public interface userMapper {
             @Result(property = "userID", column = "useid"),
             @Result(property = "userName", column = "username")
     })
-    List<userEntity> getAll();
+    List<User> getAll();
 }
