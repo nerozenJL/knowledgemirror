@@ -62,7 +62,7 @@ public class QuestionService {
         Map<String, Object> questionMap = new HashMap<String, Object>();//用来存放题目
         randomNumList = new ArrayList();
         //for(int j=1;j<=questionDao.countClass();j++){//三种类型的题
-        for (int j = 1; j <= 2; j++) {
+        for (int j = 1; j <= 12; j++) {
             randomNumList.clear();
             for (i = 0; i < 2; i++) {
                 /*生成不重复随机数*/
