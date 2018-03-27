@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="gof.knowledgemirror.dao.QuestionDao" >
+
+
+    <!--<select id="doLogin" parameterType="String" resultType="gof.knowledgemirror.pojos.UserEntity">
+        SELECT *
+        FROM user
+        WHERE user_name=#{arg0} AND user_password = #{arg1};
+    </select>-->
+
+    <!--根据second_id来得出该类型题目的数量 一遍提供获得改题目的数随机数-->
+    <select id="queryCountByClass" parameterType="int" resultType="int">
+        SELECT COUNT(*) FROM question WHERE second_id=#{second_id};
+    </select>
+
+    <!--<select id="countClass" resultType="int">
+        SELECT COUNT (*) FROM first_class;
+    </select>-->
+
+    <select id="countClass" resultType="int">
+        SELECT COUNT (*) FROM question;
+    </select>
+
+
+    <!--从每种类型的题目数根据随机数 取出一条记录-->
+    <select id="selectQueByRandom"
+            parameterType="int" resultType="gof.knowledgemirror.pojos.QuestionLoad">
+        SELECT id as question_id ,question_quest,question_answer,question_multiple
+        FROM question
+        WHERE second_id=#{arg0}
+        ORDER BY id LIMIT #{arg1},1;
+    </select>
+
+
+
+
+</mapper>

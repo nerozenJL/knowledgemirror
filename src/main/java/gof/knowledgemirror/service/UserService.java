@@ -18,6 +18,7 @@ public class UserService {
     }
 
     public boolean doLogin(String user_name,String user_password){
+
         //能取到该账号和该密码对应的用户
         if(userDao.doLogin(user_name,user_password)!=null){
             return true;

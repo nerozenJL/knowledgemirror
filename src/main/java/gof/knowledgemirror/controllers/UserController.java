@@ -67,7 +67,13 @@ public class UserController {
         }
 
         //System.out.print(modelMap);
+
+
         return modelMap;
+
+
+
+
     }
 
 
@@ -108,7 +114,11 @@ public class UserController {
     }
 
 
-
+    /**
+     * 再将注册信息插入数据库
+     * @param user
+     * @return
+     */
     @RequestMapping(value="doRegister",method = RequestMethod.POST)
     @ResponseBody
     public Map<String,Object> doRegister(@RequestBody UserEntity user){
@@ -128,6 +138,11 @@ public class UserController {
 
 
     }
+
+
+    /**
+     * 从数据库中取题
+     */
 
 
 
