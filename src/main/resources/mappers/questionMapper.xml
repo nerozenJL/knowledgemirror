@@ -20,7 +20,7 @@
     </select>-->
 
     <select id="countClass" resultType="int">
-        SELECT COUNT (*) FROM second_class;
+        SELECT COUNT(*) FROM second_class;
     </select>
 
 

@@ -38,7 +38,7 @@
                     console.log(i+"  "+JSON.stringify(msg[i].question_answer));
 				}*/
 					var abc = i+"1";
-					var bc = i+"2";
+					var bc = i+"2a";
 					var cd = i+"3";
 					number++;
 
@@ -48,9 +48,9 @@
 					one.attr("id",msg[i].question_id);
 
 					if(msg[i].question_multiple === "1"){
-						var two = $("<span>"+msg[i].question_quest+"  (多选题)</span>");
+						var two = $("<span>"+number+"."+msg[i].question_quest+"  (多选题)</span><br>");
 					}else{
-						var two = $("<span>"+msg[i].question_quest+"</span>");
+						var two = $("<span>"+number+"."+msg[i].question_quest+"</span>");
 					}
 					$("#"+msg[i].question_id).append(two);
 					two.attr("class","u58_span1");
@@ -62,19 +62,23 @@
 					three.attr("id",bc);
 
 					if(msg[i].question_multiple === "yes"){
-						var four = $("<br><label><input type='checkbox' name='"+i+"' class='"+msg[i].question_id+"' value='A' /><span></span><span style='vertical-align: top;'>"+msg[i].question_answer.A+
-							"</span></label><br><br><label><input type='checkbox' name='"+i+"'  class='"+msg[i].question_id+"' value='B' /><span></span><span style='vertical-align: top;'>"+msg[i].question_answer.B+
-							"</span></label><br><br><label><input type='checkbox' name='"+i+"'  class='"+msg[i].question_id+"' value='C' /><span></span><span style='vertical-align: top;'>"+msg[i].question_answer.C+
-							"</span></label><br><br><label><input type='checkbox' name='"+i+"'  class='"+msg[i].question_id+"' value='D' /><span></span><span style='vertical-align: top;'>"+msg[i].question_answer.D+
-							"</span></label>")
+						var four = $("<br><label><input type='checkbox' name='"+i+"' class='"+msg[i].question_id+"' value='A' /><span></span><span style='vertical-align: top;' name = '"+i+"A'>"+
+							"</span></label><br><br><label><input type='checkbox' name='"+i+"'  class='"+msg[i].question_id+"' value='B' /><span></span><span style='vertical-align: top;' name = '"+i+"B'>"+
+							"</span></label><br><br><label><input type='checkbox' name='"+i+"'  class='"+msg[i].question_id+"' value='C' /><span></span><span style='vertical-align: top;' name = '"+i+"C'>"+
+							"</span></label><br><br><label><input type='checkbox' name='"+i+"'  class='"+msg[i].question_id+"' value='D' /><span></span><span style='vertical-align: top;' name = '"+i+"D'>"+
+							"</span></label><br>")
 					}else{
-						var four = $("<br><label><input type='radio' name='"+i+"'  class='"+msg[i].question_id+"' value='A' /><span></span><span style='vertical-align: top;'>"+msg[i].question_answer.A+
-							"</span></label><br><br><label><input type='radio' name='"+i+"'  class='"+msg[i].question_id+"' value='B' /><span></span><span style='vertical-align: top;'>"+msg[i].question_answer.B+
-							"</span></label><br><br><label><input type='radio' name='"+i+"'  class='"+msg[i].question_id+"' value='C' /><span></span><span style='vertical-align: top;'>"+msg[i].question_answer.C+
-							"</span></label><br><br><label><input type='radio' name='"+i+"'  class='"+msg[i].question_id+"' value='D' /><span></span><span style='vertical-align: top;'>"+msg[i].question_answer.D+
-							"</span></label>")
+						var four = $("<br><label><input type='radio' name='"+i+"'  class='"+msg[i].question_id+"' value='A' /><span></span><span style='vertical-align: top;' name = '"+i+"A'>"+
+							"</span></label><br><br><label><input type='radio' name='"+i+"'  class='"+msg[i].question_id+"' value='B' /><span></span><span style='vertical-align: top;' name = '"+i+"B'>"+
+							"</span></label><br><br><label><input type='radio' name='"+i+"'  class='"+msg[i].question_id+"' value='C' /><span></span><span style='vertical-align: top;' name = '"+i+"C'>"+
+							"</span></label><br><br><label><input type='radio' name='"+i+"'  class='"+msg[i].question_id+"' value='D' /><span></span><span style='vertical-align: top;' name = '"+i+"D'>"+
+							"</span></label><br>")
 					}
 					$("#"+bc).append(four);
+					$("span[name="+i+"A]").text("A:"+msg[i].question_answer.A);
+                    $("span[name="+i+"B]").text("B:"+msg[i].question_answer.B);
+                    $("span[name="+i+"C]").text("C:"+msg[i].question_answer.C);
+                    $("span[name="+i+"D]").text("D:"+msg[i].question_answer.D);
 				}
 			},
 		});

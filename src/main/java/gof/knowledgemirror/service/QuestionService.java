@@ -62,7 +62,7 @@ public class QuestionService {
         Map<String, Object> questionMap = new HashMap<String, Object>();//用来存放题目
         randomNumList = new ArrayList();
         //for(int j=1;j<=questionDao.countClass();j++){//三种类型的题
-        for (int j = 1; j <= 12; j++) {
+        for (int j = 1; j <= questionDao.countClass(); j++) {
             randomNumList.clear();
             for (i = 0; i < 2; i++) {
                 /*生成不重复随机数*/
@@ -76,9 +76,10 @@ public class QuestionService {
 
                 }
 
-                System.out.println(randomNum);
+
                 QuestionLoad questionLoad = questionDao.selectQueByRandom(j, randomNum - 1);
                 JSONObject answerJson = JSONObject.fromObject(questionLoad.getQuestion_answer());
+                System.out.println(questionLoad.getQuestion_id());
                 questionLoad.setQuestion_answer(answerJson);
                 questionMap.put(countTotal.toString(), questionLoad);//将题目放进map
                 countTotal++;
