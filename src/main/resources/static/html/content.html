@@ -1,0 +1,43 @@
+﻿<!doctype html>
+<html>
+<head>
+<title>菜单栏</title>   
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <link href="../css/jquery-ui-themes.css" type="text/css" rel="stylesheet"/>
+    <link href="../css/axure_rp_page.css" type="text/css" rel="stylesheet"/>
+	<link href="../css/styles2.css" type="text/css" rel="stylesheet"/>
+	<link href="../css/leftcontent.css" type="text/css" rel="stylesheet"/>
+    <!--link href="files/personal_page/styles.css" type="text/css" rel="stylesheet"/-->
+
+</head>
+<script type="text/javascript">
+function $(id){
+return document.getElementById(id)
+};
+window.onload = function(){
+$("navbar").onclick = function(e){
+var src = e?e.target:event.srcElement;
+if(src.tagName == "H3"){
+	var next = src.nextElementSibling || src.nextSibling;
+	next.style.display = (next.style.display =="block")?"none":"block";
+	}
+}
+};
+</script>
+<body>
+<div id="navbar">
+	<h3>个人资料</h3>
+	<div>
+		<a href="personallook.html" target="main">个人资料查看</a>
+		<a href="personal.html" target="main">个人资料修改</a>
+	</div>
+	<h3>测试历史</h3>
+	<div>
+		<a href="history.html" target="main">计算机类</a>
+		<a href="wu.html" target="main">艺术类</a>
+	</div>
+</div>
+</body>
+</html>

@@ -14,6 +14,20 @@
   -webkit-background-size:cover;
   text-align:left;
 }
+canvas{
+
+  display: block;
+}
+input[type="checkbox"]{appearance: none; -webkit-appearance: none;outline: none;display:none}
+label{display:inline-block;cursor:pointer;}
+label input[type="checkbox"] + span{width:20px;height:20px;display:inline-block;background:url(../image/test/input-radio.gif)  no-repeat;background-position:-26px 0}
+label input[type="checkbox"]:checked + span{background-position:0 0px}
+
+input[type="radio"]{appearance: none; -webkit-appearance: none;outline: none;display:none}
+label{display:inline-block;cursor:pointer;}
+label input[type="radio"] + span{width:20px;height:20px;display:inline-block;background:url(../image/test/input-radio.gif)  no-repeat;background-position:-26px 0;}
+label input[type="radio"]:checked + span{background-position:0 0}
+
 #base {
   position:absolute;
   z-index:0;
@@ -240,10 +254,10 @@
   background:none;
   border:none;
 }
-#u58 {
+.u58 {
   background:#FFFFFF;
   width:100%;
-  height:250px;
+  min-height:250px;
   border-radius:20px 20px 20px 20px;
   position:relative;
   border:1px solid #152935;
@@ -266,7 +280,7 @@
 
 
 }
-#u58_span1 {
+.u58_span1 {
   background:none;
   font-weight:400;
   font-style:normal;
@@ -280,7 +294,7 @@
 li {
 	list-style-type:none;
 }
-#u58_ul {
+.u58_ul {
   background:none;
   border-radius:20px 20px 20px 20px;
   font-weight:400;
@@ -288,7 +302,7 @@ li {
   font-size:15px;
   position:absolute;
   color:#152935;
-  left:20px;
+  left:40px;
   top:50px;
 }
 #u560 {
@@ -337,7 +351,6 @@ li {
   position:absolute;
   right:10px;
   top:0px;
-  width:75px;
   height:25px;
   background-color:transparent;
   font-family:'Arial Normal', 'Arial';
@@ -378,7 +391,7 @@ li {
   color:#FFFFFF;
 }
 
-#u53_button {
+.u53_button {
 	background: none; 
 	border:none;
 	color:#FFFFFF;
@@ -959,20 +972,62 @@ li {
 }
 #u50 {
   background-color: #FFFFFF;
-  width:80%;
+  width:85%;
   height: 85%;
   border-radius:20px 20px 20px 20px;
   margin-bottom:20px;
   border:1px solid #152935;
+  position: relative;
   left:0;
   right: 0;
   margin: auto;
+  clear:both;
 }
 #u50_radar {
   width:40%;
-  background-color: #fff000;
   border-radius: 20px 20px 20px 20px;
-  height:100%;
+  height:90%;
   margin-left: 5%;
-
+  display: inline-block;
+}
+#sixStart {
+  width:100%; 
+  height:100%;
+  text-align: center;
+}
+#pie {
+  width:100%;
+  height:60%;
+}
+#result_text {
+  width:100%;
+  height:40%;
+}
+#result_right {
+  width:55%; 
+  height:100%;
+  text-align: center;
+  display: inline-block;
+  position: absolute;
+}
+#pie1 {
+  width:50%;
+  height: 100%;
+  float: left;
+}
+#pie2 {
+  width:50%;
+  height: 100%;
+  float: left;
+}
+#ppp {
+  float: top;
+  text-align:left;
+  width:85%;
+  height: 70%;
+  border-radius:20px 20px 20px 20px;
+  border:1px solid #152935;
+  margin-left: 5%;
+  padding:5px 5px 5px 5px;
+  overflow: auto;
 }

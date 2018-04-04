@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="gof.knowledgemirror.dao.AnswerScoreDao" >
+
+    <!--取出题目id对应的正确答案-->
+    <select id="selectQuestionAnswerById"
+            parameterType="int" resultType="gof.knowledgemirror.pojos.QuestionEntity">
+        SELECT question_right_answer ,second_id
+        FROM question
+        WHERE question_id=#{arg0}
+    </select>
+
+    <!--取出最后得分及分析-->
+    <insert id="insertUserScoreByUserName" parameterType="gof.knowledgemirror.pojos.AnswerScoreEntity"
+            flushCache="true" keyProperty="user_name">
+        INSERT INTO record
+        (user_name,html_score,css_score,ajax_score,js_score,jqury_score,
+        data_structure_score,os_score,com_net_score,com_org_score,comprehension_score,analogy_score,number_score,text)
+        VALUES
+        (#{user_name},#{html_score},#{css_score},#{ajax_score},#{js_score},#{jqury_score},#{data_structure_score},
+        #{os_score},#{com_net_score},#{com_org_score},#{comprehension_score},
+        #{analogy_score},#{number_score},#{text})
+    </insert>
+
+
+</mapper>

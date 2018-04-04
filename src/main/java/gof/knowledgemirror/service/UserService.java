@@ -5,7 +5,6 @@ import gof.knowledgemirror.pojos.UserEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.jws.soap.SOAPBinding;
 
 @Service
 public class UserService {
@@ -18,6 +17,7 @@ public class UserService {
     }
 
     public boolean doLogin(String user_name,String user_password){
+
         //能取到该账号和该密码对应的用户
         if(userDao.doLogin(user_name,user_password)!=null){
             return true;

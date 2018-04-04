@@ -1,0 +1,93 @@
+﻿<!doctype html>
+<html>
+<head>
+<title>测试历史页面</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <link href="../css/jquery-ui-themes.css" type="text/css" rel="stylesheet"/>
+    <link href="../css/axure_rp_page.css" type="text/css" rel="stylesheet"/>
+    <link href="../css/styles.css" type="text/css" rel="stylesheet"/>
+    <link href="../files/personal_page/styles.css" type="text/css" rel="stylesheet"/>
+    <script src="../js/jquery-1.7.1.min.js"></script>
+    <script src="../js/jquery-ui-1.8.10.custom.min.js"></script>
+    <!--script src="resources/scripts/prototypePre.js"></script>
+    <script src="data/document.js"></script>
+    <script src="resources/scripts/prototypePost.js"></script>
+    <script src="files/personal_page/data.js"></script-->
+    <!--script type="text/javascript">
+        $axure.utils.getTransparentGifPath = function() { return 'resources/images/transparent.gif'; };
+        $axure.utils.getOtherPath = function() { return 'resources/Other.html'; };
+        $axure.utils.getReloadPath = function() { return 'resources/reload.html'; };
+      </script-->
+    <style type="text/css">
+		body {
+			background-position: center;
+			position: relative;
+			height: auto;
+			width: auto;
+		}
+  ul {
+   list-style: none;
+   margin: 0;
+   padding: 0;
+  }
+a {text-decoration:none;}
+li {
+left:20px;
+top:20px;
+width:120px;
+height:30px;
+background-color:grey;
+border-color:black;
+}
+
+.big{width:100%;height:500px;margin:0 auto;border-color:rgba(121, 121, 121, 1);background-color:rgba(255, 255, 255, 1);}
+.top{width:100%;height:100px;border:1px solid #06C;border-color:rgba(121, 121, 121, 1);background-color:rgba(255, 255, 255, 1);}
+.cent{width:100%;height:250px;border:1px solid #0C6;border-color:rgba(121, 121, 121, 1);background-color:rgba(255, 255, 255, 1);}
+    </style>
+    <script type="text/javascript">
+        $(document).ready(function(){
+	$("#myTable").children("tbody").empty();
+        $.ajax({  
+            url:"/home/request"+Math.random(), //接收数据地址???????????????????
+            dataType:"json",
+            type: "GET", 
+            timeout:1000,
+            cache:false,  
+            async: false,         
+            error: function(request) {  //失败的话
+		alert("Sorry，测试历史查询失败"); 
+		window.location.href="#personalpage.html"; 
+            },  
+            success: function(data) {  //成功
+                var tbody="";
+		$.each(data,function(i,item){
+			tbody+="<tr>"+"<td>"+item.order+"</td>"+"<td>"+item.ceshilishi+"</td>"+"</tr>";
+		});
+                $("#myTable").children("tbody").append(tbody);                   
+            },  
+        });
+        });
+    </script>  
+</head>
+<body>
+<div class="big">
+<div class="top">
+<p><h2>测试历史</h2></p>
+<hr>
+<div class="cent">
+<table id="myBigTable" align="center" border="1" bordercolor="black" width="30%"  cellpadding="1" cellspacing="0">
+<thead>
+<tr>
+<td>顺序</td>
+<td>测试历史</td>
+</tr>
+</thead>
+<tbody id="myTable"></tbody>
+</table>
+</div>
+</div>
+</div>
+</body>
+</html>

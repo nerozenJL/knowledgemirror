@@ -1,0 +1,194 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>个人知识体系系统</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <link href="../css/jquery-ui-themes.css" type="text/css" rel="stylesheet"/>
+    <link href="../css/axure_rp_page.css" type="text/css" rel="stylesheet"/>
+		<link href="../css/styles2.css" type="text/css" rel="stylesheet"/>
+		<link href="../css/homepagestyles.css" type="text/css" rel="stylesheet"/>
+    <script src="../js/jquery-1.7.1.min.js"></script>
+    <script src="../js/jquery-ui-1.8.10.custom.min.js"></script>
+    <!--script src="resources/scripts/prototypePre.js"></script-->
+    <!--script src="data/document.js"></script-->
+    <!--script src="resources/scripts/prototypePost.js"></script-->
+    <!--script src="files/personal_page/data.js"></script-->
+    <!--script type="text/javascript">
+      $axure.utils.getTransparentGifPath = function() { return 'resources/images/transparent.gif'; };
+      $axure.utils.getOtherPath = function() { return 'resources/Other.html'; };
+      $axure.utils.getReloadPath = function() { return 'resources/reload.html'; };
+	</script-->
+<style type="text/css">
+	body {text-align:center;}
+	#base {
+	position: absolute;
+	z-index: 0;
+	left: -8px;
+	border-radius:10px;
+}
+	a {text-decoration:none;} 
+	p {
+		font-size:16px;
+		margin-top:1px;
+		margin-bottom:1px;
+		position:center;
+		color:white;
+		background-color:rgba(21,41,53,1);
+		width:80px;
+		height:26px;
+		left:0px;
+		top:0px;
+		border:1px;
+		border-color:rgba(255, 255, 255, 1);
+		}
+	p:hover {width:110px;height:35px;color:rgba(21,41,53,1);background-color:white;cursor:pointer;}
+	#u253 {
+  border-width:0px;
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:0px;
+  height:0px;
+}
+	#u254.a {
+    width:1583px;
+  }
+  #u254_img.a {
+    width:1583px;
+  }
+  #u254.a {
+    width:1583px;
+  }
+  #u255.a {
+    border-width:0px;
+    position:absolute;
+    left:1376px;
+    top:27px;
+    width:126px;
+    height:25px;
+  }
+  #u255_input.a {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:126px;
+    height:25px;
+    background-color:transparent;
+    font-family:'Arial Normal', 'Arial';
+    font-weight:400;
+    font-style:normal;
+    font-size:18px;
+    text-decoration:none;
+    color:#FFFFFF;
+    text-align:left;
+    border-color:transparent;
+    outline-style:none;
+  }
+  #u256.a {
+    left:1419px;
+  }
+  #u256_div.a {
+    border-width:0px;
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:40px;
+    height:26px;
+    background:inherit;
+    background-color:rgba(255, 255, 255, 0);
+    border:none;
+    border-radius:0px;
+    -moz-box-shadow:none;
+    -webkit-box-shadow:none;
+    box-shadow:none;
+    font-size:18px;
+    color:#FFFFFF;
+  }
+  #u256.a {
+    left:1419px;
+  }
+  #u257.a {
+    border-width:0px;
+    position:absolute;
+    left:86px;
+    top:20px;
+    width:300px;
+    height:39px;
+  }
+  #u257_input.a {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:300px;
+    height:39px;
+    background-color:transparent;
+    font-family:'Arial Normal', 'Arial';
+    font-weight:400;
+    font-style:normal;
+    font-size:28px;
+    text-decoration:none;
+    color:#FFFFFF;
+    text-align:left;
+    border-color:transparent;
+    outline-style:none;
+  }
+	</style>
+</head>
+<body>
+  <div id="base" class="">
+	  <div id="u253" class="ax_default" data-label="welcome_box" data-left="0" data-top="0" data-width="1500px" data-height="739">
+					<!-- Unnamed (矩形) -->
+					<div id="u254" class="ax_default box_1">
+					  <img id="u254_img" class="img " src="images1/u254.png"/>
+					</div>
+					<!-- Unnamed (文本框) -->
+					<div id="u255" class="ax_default text_field">
+					  <input id="u255_input" type="text" value="欢迎"/>
+					</div>
+					<!-- Unnamed (矩形) -->
+					<div id="u256" class="ax_default link_button">
+					  <div id="u256_div" class=""></div>
+					  <div id="u256_text" class="text ">
+						<span id="me" title="欢迎您"></span>	
+							<span><a href="personalpage.html" target="_top;_blank" title="进入用户中心" style="cursor:pointer">用户中心</a></span>
+							<span><a href="" title="退出登录" onclick="addclick(this)" style="cursor:pointer">注销</a></span>					
+						</div>
+				</div>
+					<!-- Unnamed (文本框) -->
+					<div id="u257" class="ax_default text_field">
+					  <a href="pagepagehtml.html" type="_blank" target="_top" title="进入个人知识体系系统"><input id="u257_input" type="text" value="个人知识体系系统" style="cursor:pointer"/></a>
+					</div>
+		</div>
+	</div>
+<script type="text/javascript">
+		window.onload = function() {
+		var user_name=sessionStorage.getItem("user_name");
+		alert("欢迎用户"+user_name+"登录");
+		//session储存登录用户名	
+		//window.sessionStorage.getItem("user_name");
+	$(document).ready(function() {
+		$("#me").append(user_name);
+	});	
+	return;
+};
+
+
+	function addclick(e) {
+		if(window.confirm("确定要退出吗？")) {
+			window.sessionStorage.clear();
+			alert("退出");
+			//session.invalidate(); //运用invalidate()比较好，退出时使session失效
+			window.top.location.replace("#sign_in.html");
+		}
+		else {
+			alert("不退出");
+		return;
+		}
+
+	};
+</script>
+</body>
+</html>
