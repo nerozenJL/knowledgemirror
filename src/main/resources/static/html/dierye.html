@@ -98,5 +98,43 @@ function addclick(e) {
         </div>
 </div>
 </div>
+<script type="text/javascript">
+    /*function addclick(e) {
+        var cc = e.value; //获取元素的value值
+        var a = JSON.stringify(cc);
+        alert(a);//传递到后台
+          $.ajax({
+            type:'Post',
+            data:a,//json
+            //contentType = 'application/json',
+            dataType:'json',
+            url:'?????????',
+            error: function(request) {  //失败的话
+
+                  alert("Sorry，相关部分测试尚未开放");
+                  window.location.href = 'wu.html';
+              },
+            success:function(data){
+              if (data != null) {        //如果回传的json不为null,则触发一下代码，否则出错
+                window.top.location.href = 'person_test.html';
+
+              }
+              else {
+                alert("Sorry，题库中未找到该部分有关试题，相关测试尚未开放");
+                window.location.href = 'wu.html';
+              }
+            }
+        });
+      }; */
+    function addclick(e) {
+        var cc = $(e).attr("id");
+        if(cc == "u265_input"){
+            window.top.location.href='wu.html';
+        }
+        else{
+            window.location.href = 'person_text.html';
+        }
+    };
+</script>
   </body>
 </html>

@@ -7,87 +7,84 @@
     <meta name="apple-mobile-web-app-capable" content="yes"/>
     <link href="../css/jquery-ui-themes.css" type="text/css" rel="stylesheet"/>
     <link href="../css/axure_rp_page.css" type="text/css" rel="stylesheet"/>
-    <link href="../css/styles.css" type="text/css" rel="stylesheet"/>
+    <link href="../css/styles2.css" type="text/css" rel="stylesheet"/>
     <link href="../files/personal_page/styles.css" type="text/css" rel="stylesheet"/>
+    <link href="../css/homepagestyles.css" type="text/css" rel="stylesheet"/>
     <script src="../js/jquery-1.7.1.min.js"></script>
     <script src="../js/jquery-ui-1.8.10.custom.min.js"></script>
-    <!--script src="resources/scripts/prototypePre.js"></script>
-    <script src="data/document.js"></script>
-    <script src="resources/scripts/prototypePost.js"></script>
-    <script src="files/personal_page/data.js"></script-->
-    <!--script type="text/javascript">
-        $axure.utils.getTransparentGifPath = function() { return 'resources/images/transparent.gif'; };
-        $axure.utils.getOtherPath = function() { return 'resources/Other.html'; };
-        $axure.utils.getReloadPath = function() { return 'resources/reload.html'; };
-      </script-->
     <style type="text/css">
 		body {
 			background-position: center;
-			position: relative;
-			height: auto;
-			width: auto;
+			position: absolute;
+			height: 100%;
+			width: 100%;
 		}
-  ul {
-   list-style: none;
-   margin: 0;
-   padding: 0;
-  }
-a {text-decoration:none;}
-li {
-left:20px;
-top:20px;
-width:120px;
-height:30px;
-background-color:grey;
-border-color:black;
-}
-
-.big{width:100%;height:500px;margin:0 auto;border-color:rgba(121, 121, 121, 1);background-color:rgba(255, 255, 255, 1);}
-.top{width:100%;height:100px;border:1px solid #06C;border-color:rgba(121, 121, 121, 1);background-color:rgba(255, 255, 255, 1);}
-.cent{width:100%;height:250px;border:1px solid #0C6;border-color:rgba(121, 121, 121, 1);background-color:rgba(255, 255, 255, 1);}
+.big{width:97%;height:590px;border-radius:10px;margin:15px;border-color:rgba(21, 41, 53, 1);background-color:#152935;}
+.top{width:97%;height:70px;border-radius:10px;border:3px solid rgba(21, 41, 53, 1);border-color:rgba(21, 41, 53, 1);background-color:rgba(255,255,255,1);left:0%;}
+.cent{width:97%;height:300px;border-radius:10px;border:3px solid rgba(21, 41, 53, 1);border-color:rgba(21, 41, 53, 1);background-color:rgba(255,255,255,1);left:0%;}
+.jilu{width:40%;height:30px;border-radius:10px;margin:15px;border:3px solid rgba(21, 41, 53, 1);border-color:rgba(21, 41, 53, 1);background-color:gery;left:20px;}
     </style>
-    <script type="text/javascript">
-        $(document).ready(function(){
-	$("#myTable").children("tbody").empty();
-        $.ajax({  
-            url:"/home/request"+Math.random(), //接收数据地址???????????????????
-            dataType:"json",
-            type: "GET", 
-            timeout:1000,
-            cache:false,  
-            async: false,         
-            error: function(request) {  //失败的话
-		alert("Sorry，测试历史查询失败"); 
-		window.location.href="#personalpage.html"; 
-            },  
-            success: function(data) {  //成功
-                var tbody="";
-		$.each(data,function(i,item){
-			tbody+="<tr>"+"<td>"+item.order+"</td>"+"<td>"+item.ceshilishi+"</td>"+"</tr>";
-		});
-                $("#myTable").children("tbody").append(tbody);                   
-            },  
-        });
-        });
-    </script>  
+
 </head>
 <body>
 <div class="big">
 <div class="top">
 <p><h2>测试历史</h2></p>
-<hr>
-<div class="cent">
-<table id="myBigTable" align="center" border="1" bordercolor="black" width="30%"  cellpadding="1" cellspacing="0">
-<thead>
-<tr>
-<td>顺序</td>
-<td>测试历史</td>
-</tr>
-</thead>
-<tbody id="myTable"></tbody>
-</table>
+</div>
+<div id="history" class="cent">
+    <form id="myForm" method="POST" enctype="multipart/form-data">
+        <table id="times" align="center" border="1" bordercolor="white" width="50%"  cellpadding="1" cellspacing="0">
+
+        </table>
+    </form>
 </div>
 </div>
-</div>
+    <script type="text/javascript">
+        $(document).ready(function(){
+		//username="zhangjie";
+		//id="22";
+		//url = "jieguo.html?"+"user_name="+name+"&"+"times="+id;
+		//window.location.href=url;
+	var username = sessionStorage.getItem("user_name");
+	var msg={};
+	msg["user_name"]=username;
+	var a = JSON.stringify(msg);
+            $.ajax({
+                data:JSON.stringify(msg),
+                dataType:"JSON",
+                url:"/times",
+                contentType:"application/json;charset=utf-8",
+                type:"POST",
+                error:function(jqXHR,textStatus,errorThrown) {
+                    console.log(jqXHR.status);
+                    // console.log(textStatus);
+                    //console.log(errorThrown);
+		//alert("Sorry，测试历史查询失败");
+		//window.location.href="#personal.html";
+            },  
+            success: function(data) {
+                    //console.log(data);//成功
+	var order = data.times;
+	//alert(order);
+                var html="";
+	for(var i=1;i<=order;i++)
+	{   var div =" <tr><td align='right'>顺序:</td><td><input id="+i+" style={cursor:pointer} onclick='addclick(this)' type='button' name='times'"+" value='第"+i+"次' readonly></td></tr>";
+		html+=div;
+	}
+	$("#times").html(html);
+
+        },  
+        });
+        });
+	function addclick(e) {
+		var time= $(e).attr("id");
+		var id=sessionStorage.setItem("id",time);
+		url = "jieguo.html";
+		window.top.location.href=url;
+	};
+    </script>  
 </body>
+<div>
+
+</div>
 </html>

@@ -7,6 +7,7 @@ import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -21,6 +22,7 @@ public class UserInformationService {
         Map<String,Object> modelMap = new HashMap<>();
         JSONObject jo = JSONObject.fromObject(userName);
         UserEntity userEntity= userInformationDao.selectInformationByUserName(jo.getString("user_name"));
+        Date date = userEntity.getUser_borndate();
         modelMap.put("user_email",userEntity.getUser_email());
         modelMap.put("user_borndate",userEntity.getUser_borndate());
         modelMap.put("user_evalution",userEntity.getUser_evalution());
@@ -29,6 +31,9 @@ public class UserInformationService {
         modelMap.put("user_honor",userEntity.getUser_honor());
         modelMap.put("user_skill",userEntity.getUser_skill());
 
+        System.out.println(userEntity.getUser_borndate());
+
+        System.out.println("调用到");
         return modelMap;
     }
 

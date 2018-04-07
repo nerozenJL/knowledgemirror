@@ -23,32 +23,33 @@
     </script-->
     <script type="text/javascript">
 window.onload = function() {
-    var a = sessionStorage.getItem("user_name");
+    var b  = sessionStorage.getItem("user_name");
+   // var b = "zhangjie";
+    var msg = {};
+    msg["user_name"]= b;
+    //var a = JSON.stringify(msg);
     $.ajax({
-        cache:false,
-        type: "POST",   //提交的方法
-        url:"****", //提交的地址???????????????????
-        data:a,
-        async: false,
-        dataType:'json',
-			error:function(jqXHR,textStatus,errorThrown) {
-				//console.log(jqXHR.status);
-				//console.log(textStatus);
-				//console.log(errorThrown); 
-				alert("Sorry,connection error!");
-			},
-            success: function(data) {  //成功
-		var json=eval(data);
-		for(var i=0;i<json.length;i++)
-		{
-			var user_email =json.user_email;
-			var user_borndate = json.user_borndate;
-			var user_evalution = json.user_evalution;
-			var user_education = json.user_education;
-			var user_experience = json.user_experience;
-			var user_honor = json.user_honor;
-			var user_skill = json.user_skill;
-		}
+        data:JSON.stringify(msg),
+        dataType:"JSON",
+        url:"/infor",
+        contentType:"application/json;charset=utf-8",
+        type:"POST",
+        error:function(jqXHR,textStatus,errorThrown) {
+            //console.log(jqXHR.status);
+            //console.log(textStatus);
+            //console.log(errorThrown);
+            alert("Sorry,connection error!");
+        },
+            success: function(data) {//成功
+                var user_email = data.user_email;
+                var user_borndate = data.user_borndate;
+                var user_evalution = data.user_evalution;
+                var user_education = data.user_education;
+                var user_experience = data.user_experience;
+                var user_honor = data.user_honor;
+                var user_skill = data.user_skill;
+                //alert(user_email);
+
 		$("#03").val(user_email);
 		$("#04").val(user_borndate);
 		$("#05").val(user_evalution);
@@ -65,20 +66,29 @@ window.onload = function() {
 	if(confirm("是否提交修改好的资料?")) {
 	//判断用户名，密码等不能为空
 	//if($("#01").value===sessiongetItem("user_name")){
-        var username = sessionStorage.getItem("user_name");
+        //var username = sessionStorage.getItem("user_name");
         //var acc = $('#myForm').serialize();// 序列化表单值
         //var msg111 = JSON.stringify(acc);
         //console.log(msg111);
-
-        //var a = {"user_name":username,""};
-        	alert(a);
-        	$.ajax({  
-            		cache:false,
-			type: "POST",   //提交的方法
-            		url:"****", //提交的地址???????????????????  
-           		data:a,  
-            		async: false, 
-            		dataType:'json', 
+        //username= "zhangjie";
+        var msg = {};
+        var username=sessionStorage.getItem("user_name");
+        msg["user_name"]=username;
+        msg["user_email"]=$("#03").val();
+        msg["user_borndate"]=$("#04").val();
+        msg["user_evalution"]=$("#05").val();
+        msg["user_education"]=$("#06").val();
+        msg["user_experience"]=$("#07").val();
+        msg["user_honor"]=$("#08").val();
+        msg["user_skill"]=$("#09").val();
+        var a = JSON.stringify(msg);
+        console.log(a);
+        $.ajax({
+            data:JSON.stringify(msg),
+            dataType:"JSON",
+            url:"/up",
+            contentType:"application/json;charset=utf-8",
+            type:"POST",
 					error:function(jqXHR,textStatus,errorThrown) {
 						//console.log(jqXHR.status);
 						//console.log(textStatus);
@@ -86,7 +96,7 @@ window.onload = function() {
 						alert("Sorry,connection error!");
 					}, 
             		success: function(data) {  //成功
-                 		console.log("success"); 
+                 		console.log(data);
 		 		alert("恭喜您，修改个人资料成功");  //就将返回的数据显示出来
                  		window.location.href="#personallook.html";  
             		},
