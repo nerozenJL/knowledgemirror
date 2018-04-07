@@ -1,6 +1,6 @@
 ﻿body {
   margin:0px;
-  position:absolute;
+  position:static;
   left:auto;
   margin-left:0;
   margin-right:0;
@@ -136,14 +136,14 @@ label input[type="radio"]:checked + span{background-position:0 0}
 #rg1 {
   background:#152935;
   width:500px;
-  height:1100px;
+  height:500px;
   border-radius:20px 20px 20px 20px;
   position:absolute;
-  margin-bottom:20px;
-  margin-top:20px;
   border:1px solid #152935;
   left:0;
   right: 0;
+  top:0;
+  bottom:0;
   margin: auto;
 }
 #rg1_span {
@@ -172,7 +172,7 @@ label input[type="radio"]:checked + span{background-position:0 0}
   color:#FFFFFF;
   text-align:center;
 }
-.rg1_input {
+#rg1_input {
 	background-color:#FFFFFF;
 	width:250px;
 	height:25px;
@@ -210,9 +210,9 @@ label input[type="radio"]:checked + span{background-position:0 0}
   font-family:'Arial Normal', 'Arial';
   font-weight:400;
   font-style:normal;
-  font-size:25px;
-  left:100px;
-  top:40px;
+  font-size:30px;
+  left:10px;
+  top:50px;
   text-decoration:none;
   color:#FFFFFF;
   text-align:center;
@@ -232,7 +232,7 @@ label input[type="radio"]:checked + span{background-position:0 0}
   color:#FFFFFF;
   text-align:center;
 }
-.rgs1_input {
+#rgs1_input {
 	background-color:#FFFFFF;
 	width:250px;
 	vertical-align:middle;
@@ -246,7 +246,7 @@ label input[type="radio"]:checked + span{background-position:0 0}
   font-style:normal;
   font-size:15px;
   right:80px;
-  bottom:60px;
+  bottom:50px;
   font-weight:bold;
   text-decoration:none;
   color:#FFFFFF;
@@ -254,33 +254,35 @@ label input[type="radio"]:checked + span{background-position:0 0}
   background:none;
   border:none;
 }
-.u58 {
+#rgs12_span {
+  position:absolute;
+  font-family:'Arial Normal', 'Arial';
+  font-weight:400;
+  font-style:normal;
+  font-size:15px;
+  right:10px;
+  top:50px;
+  text-decoration:none;
+  color:#FFFFFF;
+  text-align:center;
+  background:none;
+  border:none;
+}
+#u58 {
   background:#FFFFFF;
-  width:100%;
-  min-height:250px;
+  width:800px;
+  height:250px;
   border-radius:20px 20px 20px 20px;
-  position:relative;
+  position:absolute;
   border:1px solid #152935;
   left:0;
   right: 0;
-  margin-top:40px;
+  margin: auto;
+  top:100px;
   clear:both;
   vertical-align:middle;
 }
-#u58_button{
-	margin-top:30px;
-	font-size:15px;
-	width:20%;
-	height:40px;
-	background:#FFFFFF;
-	border-radius:20px 20px 20px 20px;
-	border:none;
-	color:#152935;
-	margin-left:40%;
-
-
-}
-.u58_span1 {
+#u58_span1 {
   background:none;
   font-weight:400;
   font-style:normal;
@@ -294,7 +296,7 @@ label input[type="radio"]:checked + span{background-position:0 0}
 li {
 	list-style-type:none;
 }
-.u58_ul {
+#u58_ul {
   background:none;
   border-radius:20px 20px 20px 20px;
   font-weight:400;
@@ -302,7 +304,7 @@ li {
   font-size:15px;
   position:absolute;
   color:#152935;
-  left:40px;
+  left:20px;
   top:50px;
 }
 #u560 {
@@ -341,16 +343,16 @@ li {
 #u52 {
   border-width:0px;
   position:absolute;
-  right: 40px;
+  left:1090px;
   top:27px;
-  width:50%;
+  width:126px;
   height:25px;
-  text-align: right;
 }
 #u52_input {
   position:absolute;
-  right:10px;
+  left:0px;
   top:0px;
+  width:126px;
   height:25px;
   background-color:transparent;
   font-family:'Arial Normal', 'Arial';
@@ -391,7 +393,7 @@ li {
   color:#FFFFFF;
 }
 
-.u53_button {
+#u53_button {
 	background: none; 
 	border:none;
 	color:#FFFFFF;
@@ -406,12 +408,8 @@ li {
   position:absolute;
   left:87px;
   top:20px;
-  width:50%;
+  width:414px;
   height:39px;
-}
-#u51_div{
-  width:100%;
-  height:80px;
 }
 #u51_input {
   position:absolute;
@@ -549,9 +547,8 @@ li {
   border-width:0px;
   position:absolute;
   left: 20%;
-  margin-top:50px;
-  clear:both;
-  width:60%;
+  margin-top:100px;
+    clear:both;
 }
 #u121 {
 	  position:absolute;
@@ -608,7 +605,7 @@ li {
   font-style:normal;
   font-size:20px;
   text-decoration:none;
-  width:100%;
+  width:800px;
   border-radius:20px 20px 20px 20px;
   background-color:#FFFFFF;
   color:#152935;
@@ -970,6 +967,8 @@ li {
   -webkit-box-shadow:none;
   box-shadow:none;
 }
+
+
 #u50 {
   background-color: #FFFFFF;
   width:85%;
@@ -991,7 +990,7 @@ li {
   display: inline-block;
 }
 #sixStart {
-  width:100%; 
+  width:100%;
   height:100%;
   text-align: center;
 }
@@ -1004,7 +1003,7 @@ li {
   height:40%;
 }
 #result_right {
-  width:55%; 
+  width:55%;
   height:100%;
   text-align: center;
   display: inline-block;

@@ -1,4 +1,4 @@
-﻿$(document).ready(function(){
+﻿﻿$(document).ready(function(){
 	$("#email_input").bind("blur",checkemail);    //检查邮箱
 	$("#password_input2").bind("blur",checkpassword);    //检查密码
 	$("#lg2_button").bind("click",login);    //检查用户名密码是否符合
@@ -99,13 +99,12 @@ function login(){
 				// data:{"user_name:"+$("#lg1_input").val+",user_password:"+$("#lg2_input").val()},
 				// data:{"user_name="+$("#lg1_input").val+",user_password="+$("#lg2_input").val()},
 			dataType:"JSON",
-			error:function(){
-				alert("ajax请求错误")
+			error:function(XMLHttpRequest,textStatus,errorThrown){
+				alert(XMLHttpRequest.status);
 			},	
 			success:function(data){
 				if(data.result == "success"){
-                   sessionStorage.setItem('username',data.user_name);
-					window.location.href = "/html/main.html";
+					window.location.replace("/html/main.html");
 				}else{
 					$("#username_login").html("用户名或密码错误");
 				}
