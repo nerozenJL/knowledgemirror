@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="gof.knowledgemirror.dao.UserDao" >
+
+
+    <select id="doLogin" parameterType="String" resultType="gof.knowledgemirror.pojos.UserEntity">
+        SELECT *
+        FROM user
+        WHERE user_name=#{arg0} AND user_password = #{arg1};
+    </select>
+
+    <select id="queryByUserName" parameterType="String" resultType="gof.knowledgemirror.pojos.UserEntity">
+        SELECT * FROM USER WHERE user_name=#{arg0}
+
+    </select>
+
+
+
+    <!--useGeneratedKeys="true" 表示一旦insert成功返回主键的值 因为数据库中主键设为自增长-->
+    <!--返回的主键值给entity中对应的主键keyProperty="areaId"  -->
+    <!--和数据库表的area_id列对应keyColumn="area_id"-->
+
+    <insert id="insertUser" useGeneratedKeys="true" keyProperty="id"
+            keyColumn="id" parameterType="gof.knowledgemirror.pojos.UserEntity">
+        INSERT INTO USER
+        (user_name,user_password,user_email,user_borndate,user_evalution,user_education,user_experience,user_honor,user_skill)
+        VALUES
+        (#{user_name},#{user_password},#{user_email},#{user_borndate},#{user_evalution},#{user_education},#{user_experience},#{user_honor},#{user_skill})
+        /*和entity.Area中的各个成员变量保持一致 主键自动返回*/
+    </insert>
+
+    <!--<select id="queryUser" resultType="User">
+        SELECT uerid,username FROM user
+
+    </select>-->
+
+</mapper>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="gof.knowledgemirror.dao.UserInformationDao" >
+
+    <!-- 从数据库中取出该用户个人信息 -->
+    <select id="selectInformationByUserName" resultType="gof.knowledgemirror.pojos.UserEntity">
+        SELECT user_name,user_password,user_email,user_borndate,user_evalution,user_education,user_experience,user_honor,user_skill
+        FROM user
+        WHERE user_name=#{arg0}
+    </select>
+
+    <!-- 修改该用户的个人信息 -->
+    <update id="updateInformationByUserName" parameterType="gof.knowledgemirror.pojos.UserEntity" >
+        UPDATE user
+        SET user_email=#{user_email},user_borndate=#{user_borndate},user_evalution=#{user_evalution},
+        user_education=#{user_education},user_experience=#{user_experience},user_honor=#{user_honor},user_skill=#{user_skill}
+        WHERE user_name=#{user_name}
+    </update>
+
+</mapper>
