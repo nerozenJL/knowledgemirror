@@ -9,8 +9,11 @@
 	});
 	$("#lg2_input").bind("focus",function(){    //获取焦点时设为空——密码
 		$("#password_login").html("");
-	});   
+	});
 
+    if(sessionStorage.getElem('msg')!=null){
+        alert(sessionStorage.getElem('msg'))
+    }
 })
 
 
@@ -104,7 +107,8 @@ function login(){
 			},	
 			success:function(data){
 				if(data.result == "success"){
-					window.location.replace("/html/main.html");
+                   sessionStorage.setItem('user_name',data.user_name);
+					window.location.href = "/html/pagepagehtml.html";
 				}else{
 					$("#username_login").html("用户名或密码错误");
 				}
@@ -125,24 +129,29 @@ function register(){
 		user_honer:$("#honors_awards").val(),
 		user_skill:$("#personal_skills").val(),
 	};
+	if(!checkusername()|| !checkpassword()|| !checkemail()){
+		 alert("有必填项未填");
+	}else{
+        $.ajax({
+            type:"POST",
+            url:"/doRegister",
+            contentType:"application/json;charset=utf-8",
+            data:JSON.stringify(msg),
+            dataType:"JSON",
+            error:function(){
+                alert("ajax请求错误");
+            },
+            success:function(data){
+                if(data.result ==  "success"){
+                    window.location.replace("/showLogin");
+                    //使用Location的href属性跳转页面，前一页的Url会保存在浏览器的history历史中。
+                    // 当用户点击浏览器的“后退”按钮可以返回前一页。如果你不想让返回前一页可使用Location.replace()代替:
+                }else{
+                    $("#username_login").html("网络出错");
+                }
+            },
+        });
+	}
 	//console.log(JSON.stringify(msg));
-	$.ajax({
-		type:"POST",
-		url:"/doRegister",
-        contentType:"application/json;charset=utf-8",
-		data:JSON.stringify(msg),
-		dataType:"JSON",
-		error:function(){
-			alert("ajax请求错误");
-		},
-		success:function(data){
-			if(data.result ==  "success"){
-				window.location.replace("/showLogin");
-				//使用Location的href属性跳转页面，前一页的Url会保存在浏览器的history历史中。
-				// 当用户点击浏览器的“后退”按钮可以返回前一页。如果你不想让返回前一页可使用Location.replace()代替:
-			}else{
-				$("#username_login").html("网络出错");
-			}
-		},
-	});
+
 }

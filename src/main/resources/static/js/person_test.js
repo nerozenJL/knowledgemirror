@@ -3,19 +3,28 @@
 	};
 	//获取上个html传送的数据，从session域中获取；
 	/*var ID = sessionStorage.getItem('ID');
-	var id = sessionStorage.getItem('id');
-	var username = sessionStorage.getItem('username');*/
+	var id = sessionStorage.getItem('id');*/
+	var username = sessionStorage.getItem('user_name');
 
 	var ID_1 = "123";
 	var id_1 = "231";
-	var username = "哈哈哈";
+	/*var username = "哈哈哈";*/
 	
 	$(document).ready(function(){
-		
-		var usernamebtn = $("<button>"+username+"</button>");
-		$("#u52_input").append(usernamebtn);
-		usernamebtn.attr("id","u53_button");
+        var usernamebtn1 = $("<button>"+username+"</button>");
+        $("#u52_input").append(usernamebtn1);
+        usernamebtn1.attr("class","u53_button");
 
+		var usernamebtn = $("<button>用户中心</button>");
+		$("#u52_input").append(usernamebtn);
+		usernamebtn.attr("class","u53_button");
+        usernamebtn.bind("click",usermsg);
+
+
+        var exitbtn = $("<button>退出</button>");
+        $("#u52_input").append(exitbtn);
+        exitbtn.attr("class","u53_button");
+        exitbtn.bind("click",exitbtn);
 		var infor = {
 			"ID":ID_1,
 			"id":id_1
@@ -119,8 +128,8 @@ function submit(){
 			var sta = $('input:radio[name="'+i+'"]:checked').val();
 			//alert($("input[name='"+i+"']").attr("class"));	
 			if(sta == null){
-				alert("第"+i+"题未回答！");
-				return false;
+				/*alert("第"+i+"题未回答！");*/
+				/*return false;*/
 			}else{
 				var id = $("input[name='"+i+"']").attr("class");
 				msg2[i] = {
@@ -129,12 +138,11 @@ function submit(){
 				}
 			}
 		}
-		
 	}
-	//console.log(JSON.stringify(msg2,null,'\t'));
+
 	$.ajax({
 		type:"POST",
-		url:"",
+		url:"/personalTest/submit",
 		data:JSON.stringify(msg2),
 		contentType:"application/json;charset=utf-8",
 		dataType:"JSON",
@@ -145,7 +153,7 @@ function submit(){
 		success:function(data){
 			
 			if(data.result ==  "success"){
-				window.location.replace("person_test_result.html");
+				window.location.replace("/html/test/person_test_result.html");
 			}else{
 				alert("提交失败，请重新提交");
 			}
@@ -249,3 +257,12 @@ function submit(){
 			}
 			$("#"+bc).append(four);
 		}*/
+
+
+
+    function usermsg(){
+        window.location.href = "/html/personalpage.html";
+    }
+    function exitbtn(){
+        window.location.replace("login.html");
+    }

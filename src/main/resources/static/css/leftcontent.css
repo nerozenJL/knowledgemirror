@@ -1,0 +1,14 @@
+﻿body {text-align:center;font-size:16px;margin-top:2px;margin-bottom:2px;}
+a {text-decoration:none;}
+
+#navbar{width:auto;margin:20px;margin-top:50px;margin-bottom:80px;}
+#navbar H3{ cursor:pointer; line-height:60px; height:60px; background-color:rgba(255, 255, 255, 1); color:#152935;border-radius:10px;}
+#navbar H3:hover{color:rgba(255, 255, 255, 1); background-color:#152935;}
+#navbar a{display:block; line-height:50px;color:black;background-color:white;position:center;border:1px;border-color:rgb(255, 255, 255, 1);font-size:16px;border-radius:10px;}
+#navbar a:hover{color:white;background-color:#152935;cursor:pointer;}
+#navbar div{display:none; border-top:none}
+#navbar1{width:auto;border-radius:10px;margin:15px;margin-top:50px;margin-bottom:90px;}
+#navbar1 a{display:block;cursor:pointer; line-height:50px;height:50px;border-radius:10px;background-color:rgba(255, 255, 255, 1); color:#152935;position:center;font-size:25px;border:1px;}
+#navbar1 a:hover{color:rgba(255, 255, 255, 1); background-color:#152935;cursor:pointer;}
+#navbar1 div{display:block; border-top:none}
+#navbar1 a {list-style: none;margin: 0;padding: 0;}

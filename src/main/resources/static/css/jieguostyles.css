@@ -410,18 +410,14 @@ li {
   position:absolute;
   left:87px;
   top:20px;
-  width:50%;
-  height:39px;
 }
 #u51_div{
   width:100%;
   height:80px;
 }
-#u51_input {
+#u51 {
   position:absolute;
-  left:0px;
-  top:0px;
-  width:414px;
+  width:auto;
   height:39px;
   background-color:transparent;
   font-family:'Arial Normal', 'Arial';

@@ -2,22 +2,16 @@ package gof.knowledgemirror.controllers;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.util.JSONPObject;
 import gof.knowledgemirror.pojos.UserEntity;
-import gof.knowledgemirror.pojos.UserReg;
 import gof.knowledgemirror.service.UserService;
-import netscape.javascript.JSObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.Console;
 import java.io.IOException;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 @Controller
@@ -45,7 +39,7 @@ public class UserController {
      */
     @RequestMapping(value = "login", method = RequestMethod.POST)
     @ResponseBody
-    public Map<String,Object> doLogin(@RequestBody String loginJson ) {
+    public Map<String,Object> doLogin(@RequestBody String loginJson,HttpServletRequest request ) {
         ObjectMapper mapper=new ObjectMapper();//转换器
         //ModelAndView mv = new ModelAndView();
         Map<String,Object> modelMap=new HashMap<String, Object>();
@@ -58,7 +52,8 @@ public class UserController {
                 //mv.addObject("result", "success");
                 //mv.setViewName("redirect:/main");//登录会后重定向到主页
                 modelMap.put("result","success");
-
+                modelMap.put("user_name",userName);//传递用户名
+                request.getSession().setAttribute("username",userName);
             }else{
                 modelMap.put("result","failure");
             }
@@ -132,8 +127,6 @@ public class UserController {
         }else{
             modelMap.put("result","failure");
         }
-
-        System.out.print(modelMap);
         return modelMap;
 
 

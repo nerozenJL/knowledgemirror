@@ -1,0 +1,140 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <title>艺术类</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <link href="../css/jquery-ui-themes.css" type="text/css" rel="stylesheet"/>
+    <link href="../css/axure_rp_page.css" type="text/css" rel="stylesheet"/>
+    <link href="../css/styles2.css" type="text/css" rel="stylesheet"/>
+    <link href="../css/homepagestyles.css" type="text/css" rel="stylesheet"/>
+    <script src="../resources/scripts/jquery-1.7.1.min.js"></script>
+    <script src="../resources/scripts/jquery-ui-1.8.10.custom.min.js"></script>
+    <!--script src="files/home_page/data.js"></script-->
+    <!--script type="text/javascript">
+      $axure.utils.getTransparentGifPath = function() { return 'resources/images/transparent.gif'; };
+      $axure.utils.getOtherPath = function() { return 'resources/Other.html'; };
+      $axure.utils.getReloadPath = function() { return 'resources/reload.html'; };
+    </script-->
+    <meta name="keywords" content="keyword1,keyword2,keyword3">
+    <meta name="description" content="this is my page">
+    <style type="text/css">
+body {
+	background-position: center;
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	}
+.big{width:97%;height:400px;border-radius:10px;margin:15px;border-color:rgba(21, 41, 53, 1);background-color:#152935;}
+.top{width:97%;height:70px;border-radius:10px;border:3px solid rgba(21, 41, 53, 1);border-color:rgba(21, 41, 53, 1);background-color:rgba(255,255,255,1);left:0%;}
+.cent{width:97%;height:270px;border-radius:10px;border:3px solid rgba(21, 41, 53, 1);border-color:rgba(21, 41, 53, 1);background-color:rgba(255,255,255,1);left:0%;}
+
+    </style>
+  </head>
+  <!--script type="text/javascript">
+function addclick(e) {
+      var cc = $(e).attr("id"); 
+	if(cc == "u2651_input"){
+		window.top.location.href='person_text.html';
+	}
+	else{
+		window.location.href = 'wu.html';
+	}
+};
+    /*function addclick(e) {
+      var cc = e.value; //获取元素的value值
+      var a = JSON.stringify(cc);
+      alert(a);//传递到后台  
+        $.ajax({  
+          type:'Post',  
+          data:a,//json  
+          //contentType = 'application/json',  
+          dataType:'json',  
+          url:'?????????',  
+          error: function(request) {  //失败的话
+                alert("Sorry，相关部分测试尚未开放");  
+                window.location.href = 'wu.html';
+            },
+          success:function(data){
+            if (data != null) {        //如果回传的json不为null,则触发一下代码，否则出错
+              window.top.location.href = 'person_test.html';
+            }
+            else {
+              alert("Sorry，题库中未找到该部分有关试题，相关测试尚未开放");
+              window.top.location.href = 'wu.html';
+            }
+          }
+      }); 
+    };*/   
+    </script-->
+  <body>
+<div class="big">
+<div class="top">
+<p><h3>艺术类</h3></p>
+</div>
+<div class="cent">
+      <div id="u263" class="ax_default" data-label="1-1" data-left="55" data-top="117" data-width="191" data-height="189">
+          <!-- 1 (矩形) -->
+          <div id="u264" class="ax_default box_1" data-label="1">
+            <div id="u264_div" class=""></div>
+          </div>
+          <!-- Unnamed (文本框) -->
+          <div id="u265" class="ax_default text_field">
+            <input id="u265_input" name="题型" type="text" value="音乐知识" onclick="addclick(this)" style="cursor:pointer"/>
+          </div>
+          <!-- Unnamed (文本框) -->
+          <div id="u266" class="ax_default text_field">
+            <input id="u266_input" type="text" value="开始测试"/>
+          </div>
+          <!-- Unnamed (形状) -->
+          <div id="u267" class="ax_default icon">
+            <img id="u267_img" class="img " src="../image/images1/u267.png"/>
+          </div>
+            <!-- Unnamed (形状) -->
+          <div id="u268" class="ax_default icon">
+            <img id="u268_img" class="img " src="../image/images1/u2681.jpg"/>
+          </div>
+        </div>
+</div>
+</div>
+<script type="text/javascript">
+    /*function addclick(e) {
+        var cc = e.value; //获取元素的value值
+        var a = JSON.stringify(cc);
+        alert(a);//传递到后台
+          $.ajax({
+            type:'Post',
+            data:a,//json
+            //contentType = 'application/json',
+            dataType:'json',
+            url:'?????????',
+            error: function(request) {  //失败的话
+
+                  alert("Sorry，相关部分测试尚未开放");
+                  window.location.href = 'wu.html';
+              },
+            success:function(data){
+              if (data != null) {        //如果回传的json不为null,则触发一下代码，否则出错
+                window.top.location.href = 'person_test.html';
+
+              }
+              else {
+                alert("Sorry，题库中未找到该部分有关试题，相关测试尚未开放");
+                window.location.href = 'wu.html';
+              }
+            }
+        });
+      }; */
+    function addclick(e) {
+        var cc = $(e).attr("id");
+        if(cc == "u265_input"){
+            alert("暂未开放");
+        }
+        else{
+            window.location.href = 'person_text.html';
+        }
+    };
+</script>
+  </body>
+</html>

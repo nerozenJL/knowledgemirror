@@ -79,7 +79,7 @@ public class QuestionService {
 
                 QuestionLoad questionLoad = questionDao.selectQueByRandom(j, randomNum - 1);
                 JSONObject answerJson = JSONObject.fromObject(questionLoad.getQuestion_answer());
-                System.out.println(questionLoad.getQuestion_id());
+                //System.out.println(questionLoad.getQuestion_id());
                 questionLoad.setQuestion_answer(answerJson);
                 questionMap.put(countTotal.toString(), questionLoad);//将题目放进map
                 countTotal++;
