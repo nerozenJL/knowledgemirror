@@ -25,16 +25,10 @@ var user = sessionStorage.getElem('username');
 };
 */
 //获取上个html传送的数据，从session域中获取；
-/*var ID = sessionStorage.getItem('ID');
-var id = sessionStorage.getItem('id');*/
+/*var ID = sessionStorage.getItem('ID');*/
+//var id = sessionStorage.getItem('id');
 var username = sessionStorage.getItem('user_name');
 
-var ID_1 = "123";
-var id_1 = "231";
-/*var username = "哈哈哈";*/
-
-var username = "哈哈哈";
-var id = "1";
 var msg1 = {
     "id":id,
     "username":username,
@@ -272,7 +266,7 @@ $(document).ready(function(){
 
 
 function usermsg(){
-    window.location.href = ".html";
+    window.location.href = "/html/personal.html";
 }
 function exitbtn(){
     window.location.replace("login.html");

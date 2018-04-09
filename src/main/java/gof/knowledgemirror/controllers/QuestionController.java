@@ -27,8 +27,7 @@ public class QuestionController {
 
     @RequestMapping(value="loadQuestion",method = RequestMethod.POST)
     @ResponseBody
-    public Map<String,Object> getQuestion(){
-        return questionService.getQuestionByRandom();
+    public Map<String,Object> getQuestion(){ return questionService.getQuestionByRandom();
     }
 
 

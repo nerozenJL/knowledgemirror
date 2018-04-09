@@ -12,13 +12,13 @@
     </select>
 
 
-    <select id="selectRecordByUserName"
+  <!--  <select id="selectRecordByUserName"
             parameterType="String" resultType="gof.knowledgemirror.pojos.AnswerScoreEntity">
         SELECT *
         FROM record
         WHERE user_name=#{arg0}
     </select>
-
+-->
     <!--将测试结果存入record信息表中-->
     <insert id="insertUserScoreByUserName" parameterType="gof.knowledgemirror.pojos.AnswerScoreEntity"
             useGeneratedKeys="true" keyProperty="id" keyColumn="id">

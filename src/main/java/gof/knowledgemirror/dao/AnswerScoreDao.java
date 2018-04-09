@@ -7,8 +7,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface AnswerScoreDao {
 
-    AnswerScoreEntity selectRecordByUserName(String userName);
-
     QuestionEntity selectQuestionAnswerById(int questionId);
 
     /**

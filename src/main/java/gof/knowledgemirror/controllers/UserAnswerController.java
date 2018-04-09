@@ -25,7 +25,7 @@ public class UserAnswerController {
     @RequestMapping(value= "/submit", method= RequestMethod.POST)
     @ResponseBody   //直接获取返回对象
     public Map<String,Object> getUserAnswer(@RequestBody String answerJson){
-        System.out.println(answerJson);
+        //System.out.println(answerJson);
         return userAnswerService.judgeAnswer(answerJson);
     }
 
@@ -39,7 +39,6 @@ public class UserAnswerController {
     @ResponseBody
     public Map<String,Object> getUserScore(@RequestBody String user){
 
-        JSONObject userJson=JSONObject.fromObject(user);
-        return userAnswerService.getScore(userJson.getString("username"));
+       return userAnswerService.getScore();
     }
 }

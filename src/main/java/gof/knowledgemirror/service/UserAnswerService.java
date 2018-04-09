@@ -39,7 +39,7 @@ public class UserAnswerService {
     public Map<String,Object> judgeAnswer(String answerJson){
         Map<String,Object> modelMap=new HashMap<String, Object>();
         JSONObject ansJson = JSONObject.fromObject(answerJson);
-        String userName = ansJson.getString("user_name");
+        String userName = ansJson.getString("username");
         for(int i=1 ; i<=ansJson.size()-2 ; i++){
             String id = String.valueOf(i);//第几道题
             String Answer = ansJson.getString(id);
@@ -102,29 +102,21 @@ public class UserAnswerService {
         return modelMap;
     }
 
-   public Map<String,Object> getScore(String userName){
-        int amount = 2;
-        AnswerScoreEntity answerScoreEntity=answerScoreDao.selectRecordByUserName("哈哈哈");
-        Map<String,Object> modelMap=new HashMap<String, Object>();
-        modelMap.put("html_total",amount);
-        modelMap.put("html_right",answerScoreEntity.getHtml_score());
-        modelMap.put("css_total",amount);
-        modelMap.put("css_right",answerScoreEntity.getCss_score());
-        modelMap.put("ajax_total",amount);
-        modelMap.put("ajax_right",answerScoreEntity.getAjax_score());
-        modelMap.put("js_total",amount);
-        modelMap.put("js_right",answerScoreEntity.getJs_score());
-        modelMap.put("jquery_total",amount);
-        modelMap.put("jquery_right",answerScoreEntity.getJqury_score());
-        score13 =
-                answerScoreEntity.getOs_score() +
-                answerScoreEntity.getData_structure_score()+
-                answerScoreEntity.getCom_org_score()+
-                answerScoreEntity.getCom_net_score();
-        score14 =
-                answerScoreEntity.getAnalogy_score()+
-                answerScoreEntity.getComprehension_score() +
-                answerScoreEntity.getNumber_score();
+   public Map<String,Object> getScore(){
+       int amount = 2;
+       Map<String,Object> modelMap=new HashMap<String, Object>();
+       modelMap.put("html_total",amount);
+       modelMap.put("html_right",score1);
+       modelMap.put("css_total",amount);
+       modelMap.put("css_right",score2);
+       modelMap.put("ajax_total",amount);
+       modelMap.put("ajax_right",score3);
+       modelMap.put("js_total",amount);
+       modelMap.put("js_right",score4);
+       modelMap.put("jqury_total",amount);
+       modelMap.put("jqury_right",score5);
+       score13 = score6 + score7 + score8 + score9;
+       score14 = score10 + score11 + score12;
        int pre_base=8;
        int base=6;
        modelMap.put("pre_base_total",pre_base);
