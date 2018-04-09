@@ -38,6 +38,7 @@ public class UserAnswerController {
     @RequestMapping(value = "/getScore",method= RequestMethod.POST)
     @ResponseBody
     public Map<String,Object> getUserScore(@RequestBody String user){
+        System.out.println(user);
 
        return userAnswerService.getScore();
     }

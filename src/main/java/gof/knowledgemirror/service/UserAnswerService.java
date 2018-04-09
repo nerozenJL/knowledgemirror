@@ -39,7 +39,7 @@ public class UserAnswerService {
     public Map<String,Object> judgeAnswer(String answerJson){
         Map<String,Object> modelMap=new HashMap<String, Object>();
         JSONObject ansJson = JSONObject.fromObject(answerJson);
-        String userName = ansJson.getString("username");
+        String userName = ansJson.getString("user_name");
         for(int i=1 ; i<=ansJson.size()-2 ; i++){
             String id = String.valueOf(i);//第几道题
             String Answer = ansJson.getString(id);
@@ -113,8 +113,8 @@ public class UserAnswerService {
        modelMap.put("ajax_right",score3);
        modelMap.put("js_total",amount);
        modelMap.put("js_right",score4);
-       modelMap.put("jqury_total",amount);
-       modelMap.put("jqury_right",score5);
+       modelMap.put("jquery_total",amount);
+       modelMap.put("jquery_right",score5);
        score13 = score6 + score7 + score8 + score9;
        score14 = score10 + score11 + score12;
        int pre_base=8;
@@ -127,7 +127,7 @@ public class UserAnswerService {
 
 
 
-       //System.out.println(modelMap);
+       System.out.println(modelMap);
        return modelMap;
     }
 

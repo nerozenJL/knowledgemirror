@@ -29,8 +29,9 @@ var user = sessionStorage.getElem('username');
 //var id = sessionStorage.getItem('id');
 var username = sessionStorage.getItem('user_name');
 
+//var id=1;
 var msg1 = {
-    "id":id,
+   // "id":id,
     "username":username,
 };
 
