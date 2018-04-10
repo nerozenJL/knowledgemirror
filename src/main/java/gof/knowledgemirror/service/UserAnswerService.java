@@ -37,11 +37,14 @@ public class UserAnswerService {
      * @return
      */
     public Map<String,Object> judgeAnswer(String answerJson){
+
         Map<String,Object> modelMap=new HashMap<String, Object>();
         JSONObject ansJson = JSONObject.fromObject(answerJson);
         String userName = ansJson.getString("user_name");
+
         for(int i=1 ; i<=ansJson.size()-2 ; i++){
             String id = String.valueOf(i);//第几道题
+            System.out.println(id);
             String Answer = ansJson.getString(id);
             JSONObject ques = JSONObject.fromObject(Answer);
             int questionId = ques.getInt("question_id");
@@ -124,10 +127,6 @@ public class UserAnswerService {
        modelMap.put("base_total",base);
        modelMap.put("base_right",score14);
        modelMap.put("text",evaluate);
-
-
-
-       System.out.println(modelMap);
        return modelMap;
     }
 

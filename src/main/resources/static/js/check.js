@@ -24,7 +24,7 @@ $(document).ready(function(){
     $("#birth_input").bind("focus",function(){    //获取焦点时设为空——生日
         $("#birth").html("");
     });
-    
+
 	$("#lg1_input").bind("focus",function(){    //获取焦点时设为空——用户名
 		$("#username_login").html("");
 	});
