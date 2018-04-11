@@ -7,16 +7,16 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration;
 import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
+/*import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.PathMatchConfigurer;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;*/
 
 @SpringBootApplication
 @MapperScan("gof.knowledgemirror.dao")
 @ComponentScan( basePackages = "gof.knowledgemirror.*")
 @ServletComponentScan
-public class KnowledgemirrorApplication extends WebMvcConfigurerAdapter {
+public class KnowledgemirrorApplication{
 
 	/*@Override
 	public void addInterceptors(InterceptorRegistry registry) {

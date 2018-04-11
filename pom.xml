@@ -57,6 +57,12 @@
 		</dependency>
 
 
+		<!--自定义数据源时使用-->
+		<!--<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+		</dependency>-->
+
 
 
 		<dependency>

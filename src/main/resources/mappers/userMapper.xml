@@ -4,10 +4,17 @@
 <mapper namespace="gof.knowledgemirror.dao.UserDao">
 
 
-    <select id="doLogin" parameterType="String" resultType="gof.knowledgemirror.pojos.UserEntity">
+    <!--<select id="doLogin" parameterType="String" resultType="gof.knowledgemirror.pojos.UserEntity">
         SELECT *
         FROM user
         WHERE user_name=#{arg0} AND user_password = #{arg1};
+    </select>-->
+
+    <!--4-11-为了解决arg0无法传入的问题-->
+    <select id="doLogin" parameterType="String" resultType="gof.knowledgemirror.pojos.UserEntity">
+        SELECT *
+        FROM user
+        WHERE user_name=#{user_name} AND user_password = #{user_password};
     </select>
 
     <select id="queryByUserName" parameterType="String" resultType="gof.knowledgemirror.pojos.UserEntity">
@@ -32,7 +39,6 @@
 
     <!--<select id="queryUser" resultType="User">
         SELECT uerid,username FROM user
-
     </select>-->
 
 </mapper>

@@ -25,12 +25,20 @@
 
 
     <!--从每种类型的题目数根据随机数 取出一条记录-->
-    <select id="selectQueByRandom"
+    <!--<select id="selectQueByRandom"
             parameterType="int" resultType="gof.knowledgemirror.pojos.QuestionLoad">
         SELECT question_id ,question_quest,question_answer,question_multiple
         FROM question
         WHERE second_id=#{arg0}
         ORDER BY question_id LIMIT #{arg1},1;
+    </select>-->
+
+    <select id="selectQueByRandom"
+            parameterType="int" resultType="gof.knowledgemirror.pojos.QuestionLoad">
+        SELECT question_id ,question_quest,question_answer,question_multiple
+        FROM question
+        WHERE second_id=#{second_id}
+        ORDER BY question_id LIMIT #{startRan},1;
     </select>
 
 
