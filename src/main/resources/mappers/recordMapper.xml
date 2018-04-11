@@ -4,13 +4,23 @@
 <mapper namespace="gof.knowledgemirror.dao.RecordDao" >
 
     <!-- 从数据库中取出用户所对应的记录 -->
-    <select id="selectRecordByUserName" resultType="gof.knowledgemirror.pojos.AnswerScoreEntity">
+    <!--<select id="selectRecordByUserName" resultType="gof.knowledgemirror.pojos.AnswerScoreEntity">
         SELECT html_score,css_score,ajax_score,js_score,jqury_score,
         data_structure_score,os_score,com_net_score,com_org_score,comprehension_score,analogy_score,number_score,text
         FROM record
         WHERE user_name=#{arg1}
         ORDER BY id LIMIT #{arg0},1;
+    </select>-->
+
+    <!--4-11修改arg0无法绑定的问题-->
+    <select id="selectRecordByUserName" resultType="gof.knowledgemirror.pojos.AnswerScoreEntity">
+        SELECT html_score,css_score,ajax_score,js_score,jqury_score,
+        data_structure_score,os_score,com_net_score,com_org_score,comprehension_score,analogy_score,number_score,text
+        FROM record
+        WHERE user_name=#{user_name}
+        ORDER BY id LIMIT #{times},1;
     </select>
+
 
     <!-- 从数据库中取出用户所做题目的次数 -->
     <select id="selectTimesByUserName" resultType="int">

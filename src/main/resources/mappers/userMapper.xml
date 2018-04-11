@@ -1,20 +1,26 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="gof.knowledgemirror.dao.UserDao" >
+<mapper namespace="gof.knowledgemirror.dao.UserDao">
 
 
-    <select id="doLogin" parameterType="String" resultType="gof.knowledgemirror.pojos.UserEntity">
+    <!--<select id="doLogin" parameterType="String" resultType="gof.knowledgemirror.pojos.UserEntity">
         SELECT *
         FROM user
         WHERE user_name=#{arg0} AND user_password = #{arg1};
+    </select>-->
+
+    <!--4-11-为了解决arg0无法传入的问题-->
+    <select id="doLogin" parameterType="String" resultType="gof.knowledgemirror.pojos.UserEntity">
+        SELECT *
+        FROM user
+        WHERE user_name=#{user_name} AND user_password = #{user_password};
     </select>
 
     <select id="queryByUserName" parameterType="String" resultType="gof.knowledgemirror.pojos.UserEntity">
-        SELECT * FROM USER WHERE user_name=#{arg0}
+        SELECT * FROM USER WHERE user_name = #{ arg0}
 
     </select>
-
 
 
     <!--useGeneratedKeys="true" 表示一旦insert成功返回主键的值 因为数据库中主键设为自增长-->
@@ -30,9 +36,9 @@
         /*和entity.Area中的各个成员变量保持一致 主键自动返回*/
     </insert>
 
+
     <!--<select id="queryUser" resultType="User">
         SELECT uerid,username FROM user
-
     </select>-->
 
 </mapper>

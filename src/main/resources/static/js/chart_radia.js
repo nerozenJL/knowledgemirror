@@ -51,7 +51,7 @@ $(document).ready(function(){
     var exitbtn = $("<button>退出</button>");
     $("#u52_input").append(exitbtn);
     exitbtn.attr("class","u53_button");
-    exitbtn.bind("click",exitbtn);
+    exitbtn.bind("click",exit);
 
 
     var myChart = echarts.init(document.getElementById('sixStart')); 
@@ -267,8 +267,8 @@ $(document).ready(function(){
 
 
 function usermsg(){
-    window.location.href = "/html/personal.html";
+    window.location.href = "/html/personalpage.html";
 }
-function exitbtn(){
-    window.location.replace("login.html");
+function exit(){
+    window.location.replace("../login.html");
 }
