@@ -1,0 +1,98 @@
+﻿<!doctype html>
+<html>
+<head>
+<title>个人资料查看页面</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <link href="../css/jquery-ui-themes.css" type="text/css" rel="stylesheet"/>
+    <link href="../css/axure_rp_page.css" type="text/css" rel="stylesheet"/>
+    <link href="../css/styles2.css" type="text/css" rel="stylesheet"/>
+    <!--link href="../files/personal_page/styles.css" type="text/css" rel="stylesheet"/-->
+    <script src="../js/jquery-1.7.1.min.js"></script>
+    <script src="../js/jquery-ui-1.8.10.custom.min.js"></script>
+    <script type="text/javascript">
+
+        $(document).ready(function(){
+        var b = sessionStorage.getItem("user_name");
+            var msg = {};
+            msg["user_name"]= b;
+            //var a = JSON.stringify(msg);
+            //console.log(a);
+            $.ajax({
+                data:JSON.stringify(msg),
+                dataType:"JSON",
+                url:"/infor",
+                contentType:"application/json;charset=utf-8",
+                type:"POST",
+                error:function(jqXHR,textStatus,errorThrown) {
+                    //console.log(jqXHR.status);
+                   // console.log(textStatus);
+                    //console.log(errorThrown);
+                    alert("Sorry，无法找到用户资料");
+                   //window.sessionStorage.clear();
+                    //window.top.location.replace("#sign_in.html");
+                },
+            success: function(data) {  //成功
+                var user_email = data.user_email;
+                var user_borndate = data.user_borndate;
+                var user_evalution = data.user_evalution;
+                var user_education = data.user_education;
+                var user_experience = data.user_experience;
+                var user_honor = data.user_honor;
+                var user_skill = data.user_skill;
+
+                $("#03").val(user_email);
+                $("#04").val(user_borndate);
+                $("#05").val(user_evalution);
+                $("#06").val(user_education);
+                $("#07").val(user_experience);
+                $("#08").val(user_honor);
+                $("#09").val(user_skill);
+            },
+	});
+});
+    </script>
+    <style>
+        body {background-image:none;background-position: center;position: absolute;height: 100%;width: 100%;left:auto;background-color:#152935;}
+        .top{width:81%;height:70px;border-radius:10px;border:3px solid rgba(21, 41, 53, 1);border-color:rgba(21, 41, 53, 1);background-color:rgba(255,255,255,1);left:0%;margin-left:9%;}
+        #myForm{width:88%;min-width:50%;height:auto;border-radius:10px;border:3px solid rgba(21, 41, 53, 1);border-color:rgba(21, 41, 53, 1);background-color:#152935;left:0%;font-family:'Arial Normal', 'Arial';font-weight:400;font-size:18px;text-align:left;line-height:normal;text-decoration:none;outline-style:none;margin-left: auto;margin-right: auto;max-width: 75%;background: #555;padding: 20px 30px 20px 30px;
+            color: #D3D3D3;text-shadow: 1px 1px 1px #444;border-radius: 10px;-webkit-border-radius: 5px;-moz-border-radius: 5px;}
+        label {display: block;margin: 2px 2px 5px;}
+        label>span {float: left;width: 12%;text-align: right;padding-right: 10px;margin-top: 8px;font-weight: bold;}
+        input,textarea {color: #525252;line-height:15px;margin-bottom: 16px;margin-right: 6px;margin-top: 2px;outline: 0 none;padding: 5px 0px 5px 5px;width: 70%;border-radius: 2px;-webkit-border-radius: 2px;-moz-border-radius: 2px;box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);background: #DFDFDF;}
+        input{width:25%;float:left;height: 25px;}
+        textarea{
+            height:90px;padding: 5px 0px 0px 5px;
+        }
+    </style>
+</head>
+<body>
+<div class="top">
+    <center><h2>用户个人信息</h2></center>
+</div>
+<div class="cent">
+    <form id="myForm" method="POST" enctype="multipart/form-data">
+        <label>
+            <span>&nbsp;邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;箱:&nbsp;&nbsp;</span>
+            <input id="03" type="email" name="user_email" readonly/>
+            <span>&nbsp;生&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;日:&nbsp;&nbsp;</span>
+            <input id="04" type="date" name="user_borndate" min="1949-10-01" readonly/><br/></label>
+        <label><br/><span>自我评价:</span>
+            <textarea id="05" name="user_evalution" cols="60" rows="5" readonly></textarea><br/></label>
+        <label>
+            <span>教育背景:</span>
+            <textarea id="06" name="user_education" cols="60" rows="5" readonly></textarea><br/></label>
+        <label>
+            <span>个人经历:</span>
+            <textarea id="07" name="user_experience" cols="60" rows="5" readonly></textarea><br/></label>
+        <label>
+            <span>荣誉奖励:</span>
+            <textarea id="08" name="user_honor" cols="60" rows="5" readonly></textarea><br/></label>
+        <label>
+            <span>个人技能:</span>
+            <textarea id="09" name="user_skill" cols="60" rows="5" readonly></textarea><br/></label>
+    </form>
+</div>
+</body>
+</html>

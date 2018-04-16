@@ -1,0 +1,331 @@
+﻿<html>
+
+  <head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=gbk" />
+    <title>个人知识体系系统—登录</title>
+    <!--<link href="../css/home_page.css" type="text/css" rel="stylesheet"/>-->
+    <link href="../css/styles.css" type="text/css" rel="stylesheet"/>
+    <script src="../js/jquery-1.7.1.min.js"></script>
+
+
+    <style type="text/css">
+
+     /* *{
+        text-decoration:none;
+        margin: 0;
+        padding: 0;
+      }*/
+
+      a{
+        color:black;
+        text-decoration:none;
+      }
+      p{
+        margin-left: 65px;
+        margin-bottom: 20px;
+
+      }
+      div{
+        border: red;
+      }
+      ul{
+        list-style: none;
+        margin:0;
+        padding:0;
+      }
+      .top input{
+        background-color:transparent;
+        font-family:'Arial Normal', 'Arial';
+        font-weight:400;
+        font-style:normal;
+        font-size:28px;
+        text-decoration:none;
+        border-color:transparent;
+/*
+        color:#FFFFFF;
+*/
+
+      }
+
+
+
+
+      .middle .left{
+        width: 20%;
+        background-color: #FFFFFF;
+        height:150% ;
+        padding-top: 40px;
+
+      }
+      .middle .left ul {
+        font-size: 20px;
+      }
+      .middle .left ul span{
+        margin-left: 80px;
+        margin-bottom: 20px;
+      }
+      .middle .left ul li{
+
+        margin-bottom: 20px;
+      }
+
+
+      .middle .left ul li input{
+        border: 0px;
+        width: 100%;
+        padding-left: 40px;
+        border-right-radius: 5px;
+        font-size: 20px;
+        border-top-right-radius:20px;
+        border-bottom-right-radius:20px ;
+        background-color:transparent;
+      }
+
+      #classbtn1{
+        background-color:#152B35;
+      }
+      .middle .left ul li input:hover{
+
+      }
+
+      .middle .left ul li input:visited{
+        background-color: #152B35;
+      }
+
+
+      .middle{
+        /*min-height:100px;*/
+       /* background-color: #FFFFFF;*/
+      }
+
+      .middle .right{
+
+        position: absolute;
+        width: 79%;
+        height:150%;
+        background-color: #FFFFFF;
+        top: 80px;
+        left: 21%;
+       /* float: right;*/
+      }
+      #search{
+        padding-top: 30px;
+        padding-left: 400px;
+        height: 80px;
+
+      }
+
+
+
+
+
+      button{
+        text-decoration: none;
+        height: 30px;
+        width: 10px;
+        background-color: #152B35;
+        margin-right: 20px;
+      }
+
+      #class1{
+        width: 100%;
+        height: 300px;
+        margin-bottom: 20px;
+        /*margin-top: 100px;*/
+      }
+
+      #class2{
+        height: 300px;
+        width: 100%;
+      }
+
+
+      #class2_content{
+        position: absolute;
+        width: 100%;
+      }
+
+      #class2_content li{
+        float: right;
+      }
+      #class2_content div{
+        width: 190px;
+        height: 190px;
+        margin: 30px 30px;
+      border: 1px solid black;
+      }
+
+      #class1_content{
+        position: absolute;
+        width: 100%;
+      }
+
+      #class1_content li{
+        float: right;
+      }
+      #class1_content div{
+        width: 190px;
+        height: 190px;
+        border: 1px solid black;
+        margin: 30px 30px;
+      }
+
+    </style>
+
+
+    <script type="text/javascript">
+
+      $(document).ready(function () {
+          $("#classbtn2").click(function () {
+              $("#class1").hide();
+              $("#class2").show();
+              $("#classbtn2").css("background-color","RGB(21,41,53)")
+              $("#classbtn1").css("background-color","#FFFFFF")
+          });
+
+          $("#classbtn1").click(function () {
+              $("#class2").hide();
+              $("#class1").show();
+              $("#classbtn1").css("background-color","RGB(21,41,53)")
+              $("#classbtn2").css("background-color","#FFFFFF")
+          });
+      });
+
+
+
+
+
+
+    </script>
+
+  </head>
+
+  <body>
+      <div  id = "u51_div">
+        <div id="u51">
+          <input id="u51_input" type="text" value="个人知识体系系统"/>
+        </div>
+
+        <div id="u52">
+          <span id="u52_input">欢迎</span>
+          <!--  <input id="u52_input" type="text" value="欢迎"/>
+           <button >user</button> -->
+        </div>
+      </div>
+
+
+
+      <div class="middle" >
+        <div class="left">
+          <div class="navigate">
+            <ul>
+              <li> <span>体系类别</span></li>
+              <li> <input type="button" value="计算机科学与技术1" id="classbtn1"></li>
+              <li> <input type="button" value="计算机科学与技术2" id="classbtn2"></li>
+            </ul>
+          </div>
+
+        </div>
+
+
+        <div class="right">
+
+          <div id="search">
+            <input type="text" style="width:300px;height: 25px">
+            <a href="#" ><img src="../image/home/search.png" style=" "></a>
+          </div>
+
+          <div id="class1">
+            <div>
+              <button></button>
+              <label style="font-size: 20px;margin-top: 10px">计算机科学与技术1</label>
+            </div>
+            <div id="class1_content">
+              <ul>
+                <li>
+                  <div>
+                    <img src="../image/home/test.png">
+                    <p>Web 前端</p>
+                    <p><a href="../html/home_page.html"> 开始测试</a></p>
+                  </div>
+                </li>
+
+                <li>
+                  <div>
+                    <img src="../image/home/test.png">
+                    <p>Web 前端</p>
+                    <p><a href="../html/home_page.html"> 开始测试</a></p>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <img src="../image/home/test.png">
+                    <p>Web 前端</p>
+                    <p><a href="../html/home_page.html"> 开始测试</a></p>
+
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <img src="../image/home/test.png">
+                    <p>Web 前端</p>
+                    <p><a href="../html/home_page.html"> 开始测试</a></p>
+                  </div>
+                </li>
+
+              </ul>
+            </div>
+
+          </div>
+          <div id="class2">
+            <div >
+
+              <button></button>
+              <label style="font-size: 20px;margin-top: 10px">计算机科学与技术2</label>
+
+            </div>
+
+            <div id="class2_content">
+              <ul>
+                <li>
+                  <div>
+                    <img src="../image/home/test.png">
+                    <p>Linux</p>
+                    <p><a href="../html/home_page.html"> 开始测试</a></p>
+                  </div>
+                </li>
+
+                <li>
+                  <div>
+                    <img src="../image/home/test.png">
+                    <p>Linux</p>
+                    <p><a href="../html/home_page.html"> 开始测试</a></p>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <img src="../image/home/test.png">
+                    <p>Linux</p>
+                    <p><a href="../html/home_page.html"> 开始测试</a></p>
+
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <img src="../image/home/test.png">
+                    <p>Linux</p>
+                    <p><a href="../html/home_page.html"> 开始测试</a></p>
+                  </div>
+                </li>
+
+              </ul>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+  </body>
+</html>

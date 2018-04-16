@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <title>导航栏</title>
+     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="apple-mobile-web-app-capable" content="yes, initial-scale=1"/>
+    <link href="../css/jquery-ui-themes.css" type="text/css" rel="stylesheet"/>
+    <link href="../css/axure_rp_page.css" type="text/css" rel="stylesheet"/>
+    <link href="../css/leftcontent.css" type="text/css" rel="stylesheet"/>
+    <script src="../js/jquery-1.7.1.min.js"></script>
+    <script src="../js/jquery-ui-1.8.10.custom.min.js"></script>
+    <meta name="keywords" content="keyword1,keyword2,keyword3">
+    <meta name="description" content="this is my page">
+  </head>
+  <body> 
+ <div id="navbar1">
+    
+<div>
+    <a href="computer.html" target="main"></a><h2 id="01">体系结构</h2></a>
+	<a href="diyiye.html" target="main">计算机类</a>
+	<a href="dierye.html" target="main">艺术类</a>
+ </div>
+</div>
+<script type="text/javascript">
+  function $(id){
+  return document.getElementById(id)
+  };
+  window.onload = function(){
+  $("navbar1").onclick = function(e){
+  var src = e?e.target:event.srcElement;
+  if(src.tagName == "H2"){
+    var next = src.nextElementSibling || src.nextSibling;
+    next.style.display = (next.style.display =="block")?"none":"block";
+    }
+  }
+  };
+  </script>
+  </body>
+</html>

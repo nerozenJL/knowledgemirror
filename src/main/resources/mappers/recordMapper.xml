@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="gof.knowledgemirror.dao.RecordDao" >
+
+    <!-- 从数据库中取出用户所对应的记录 -->
+    <select id="selectRecordByUserName" resultType="gof.knowledgemirror.pojos.AnswerScoreEntity">
+        SELECT html_score,css_score,ajax_score,js_score,jqury_score,
+        data_structure_score,os_score,com_net_score,com_org_score,comprehension_score,analogy_score,number_score,text
+        FROM record
+        WHERE user_name=#{arg1}
+        ORDER BY id LIMIT #{arg0},1;
+    </select>
+
+    <!-- 从数据库中取出用户所做题目的次数 -->
+    <select id="selectTimesByUserName" resultType="int">
+        SELECT COUNT(*) FROM record
+        WHERE user_name=#{arg0}
+    </select>
+</mapper>

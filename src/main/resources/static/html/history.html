@@ -1,0 +1,97 @@
+﻿<!doctype html>
+<html>
+<head>
+<title>测试历史页面</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <link href="../css/jquery-ui-themes.css" type="text/css" rel="stylesheet"/>
+    <link href="../css/axure_rp_page.css" type="text/css" rel="stylesheet"/>
+    <link href="../css/styles2.css" type="text/css" rel="stylesheet"/>
+    <link href="../css/homepagestyles.css" type="text/css" rel="stylesheet"/>
+    <script src="../js/jquery-1.7.1.min.js"></script>
+    <script src="../js/jquery-ui-1.8.10.custom.min.js"></script>
+    <style type="text/css">
+		body {
+			background-position: center;
+			position: absolute;
+			height: 100%;
+			width: 100%;
+		}
+.big{width:97%;height:auto;border-radius:10px;margin:15px;border-color:rgba(21, 41, 53, 1);background-color:#152935;}
+.top{width:97%;height:70px;border-radius:10px;border:3px solid rgba(21, 41, 53, 1);border-color:rgba(21, 41, 53, 1);background-color:rgba(255,255,255,1);left:0%;}
+.cent{width:97%;height:auto;border-radius:10px;border:3px solid rgba(21, 41, 53, 1);border-color:rgba(21, 41, 53, 1);background-color:rgba(255,255,255,1);left:0%;}
+    tr {display: block;margin: 2px 2px 5px;}
+    input{color: #525252;
+        line-height:15px;
+        outline: 0 none;
+        padding: 5px 5px 20px 5px;
+        border-radius: 2px;
+        -webkit-border-radius: 2px;
+        -moz-border-radius: 2px;
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+        background: #DFDFDF;
+        width: 150px;height: 30px;}
+input:hover {color:rgba(21, 41, 53, 1);border:3px solid rgba(21, 41, 53, 1);}
+    </style>
+
+</head>
+<body>
+<div class="big">
+<div class="top">
+<p><h2>测试历史</h2></p>
+</div>
+<div id="history" class="cent">
+    <form id="myForm" method="POST" enctype="multipart/form-data">
+        <table id="times" align="center" border="0" bordercolor="white" width="40%"  cellpadding="1" cellspacing="0">
+
+        </table>
+    </form>
+</div>
+</div>
+    <script type="text/javascript">
+        $(document).ready(function(){
+
+		//id="22";
+		//url = "jieguo.html?"+"user_name="+name+"&"+"times="+id;
+		//window.location.href=url;
+	var username = sessionStorage.getItem("user_name");
+	var msg={};
+	msg["user_name"]=username;
+	var a = JSON.stringify(msg);
+	console.log(a);
+            $.ajax({
+                data:JSON.stringify(msg),
+                dataType:"JSON",
+                url:"/times",
+                contentType:"application/json;charset=utf-8",
+                type:"POST",
+                error:function(jqXHR,textStatus,errorThrown) {
+                    console.log(jqXHR.status);
+                    // console.log(textStatus);
+                    //console.log(errorThrown);
+		alert("Sorry，测试历史查询失败");
+		//window.top.location.href="pagepagehtml.html";
+            },  
+            success: function(data) {                    //console.log(data);//成功
+	            var order = data.times;
+	            var html="";
+	for(var i=1;i<=order;i++)
+	{   var div =" <tr><td align='right'>测试顺序:</td><td><input id="+i+" style={cursor:pointer} onclick='addclick(this)' type='button' name='times'"+" value='&nbsp;第"+i+"次&nbsp;' readonly></td></tr>";
+		html+=div;
+	}
+	$("#times").html(html);
+
+        },  
+        });
+        });
+
+        function addclick(e) {
+            var time = $(e).attr("id");
+            //var id=sessionStorage.setItem("id",time);
+            url = "jieguo.html?id="+time;
+            window.top.location.href=url;
+        };
+    </script>  
+</body>
+</html>
