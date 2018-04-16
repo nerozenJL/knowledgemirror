@@ -1,11 +1,8 @@
 package gof.knowledgemirror.service;
 
 import gof.knowledgemirror.dao.UserDao;
-import gof.knowledgemirror.pojos.UserEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import javax.jws.soap.SOAPBinding;
 
 @Service
 public class UserService {

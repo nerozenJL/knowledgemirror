@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+﻿﻿<!DOCTYPE html>
 <html>
   <head>
     <title>计算机类</title>
@@ -31,6 +31,10 @@ body {
   width:auto;
   height:auto;
 clear:both;
+}
+#u263:hover {
+  background: #152935;
+  border:1px solid rgba(21, 41, 53, 1);
 }
 #u264_div {
   border-width:0px;
@@ -200,6 +204,10 @@ clear:both;
   width:0px;
   height:0px;
 }
+#u2632:hover {
+  background: #152935;
+  border:1px solid rgba(21, 41, 53, 1);
+}
 #u2642_div {
   border-width:0px;
   position:absolute;
@@ -365,35 +373,12 @@ clear:both;
   <script type="text/javascript">
     function addclick(e) {
       var cc = $(e).attr("id");
-        if(cc == "u265_input"){
-            window.top.location.href='/html/test/person_test.html';
+        if(cc == "u263"){
+            window.top.location.href='../html/test/person_test.html';
         }
         else{
             alert("暂未开放");
         }
-
-      /*var a = JSON.stringify(cc);
-      alert(a);//传递到后台  
-        $.ajax({  
-          type:'Post',  
-          data:a,//json  
-          //contentType = 'application/json',  
-          dataType:'json',  
-          url:'?????????',  
-          error: function(request) {  //失败的话
-                alert("Sorry，相关部分测试尚未开放");  
-                window.location.href = 'wu.html';
-            },
-          success:function(data){
-            if (data != null) {        //如果回传的json不为null,则触发一下代码，否则出错
-              window.top.location.href = 'person_test.html';
-            }
-            else {
-              alert("Sorry，题库中未找到该部分有关试题，相关测试尚未开放");
-              window.top.location.href = 'wu.html';
-            }
-          }
-      }); */
     };    
     </script>
   <body>
@@ -402,18 +387,18 @@ clear:both;
 <p><h3>计算机类</h3></p>
 </div>
 <div class="cent">
-      <div id="u263" class="ax_default" data-label="1-1" data-left="55" data-top="117" data-width="191" data-height="189">
+      <div id="u263" class="ax_default" data-label="1-1" data-left="55" data-top="117" data-width="191" data-height="189" onclick="addclick(this)" style="cursor:pointer">
           <!-- 1 (矩形) -->
           <div id="u264" class="ax_default box_1" data-label="1">
             <div id="u264_div" class=""></div>
           </div>
           <!-- Unnamed (文本框) -->
           <div id="u265" class="ax_default text_field">
-            <input id="u265_input" name="题型" type="text" value="Web 前端" style="cursor:pointer" onclick="addclick(this)"/>
+            <input id="u265_input" name="题型" type="text" value="Web 前端" style="cursor:pointer"/>
           </div>
           <!-- Unnamed (文本框) -->
           <div id="u266" class="ax_default text_field">
-            <input id="u266_input" type="text" value="开始测试"/>
+            <input id="u266_input" type="text" value="开始测试" style="cursor:pointer"/>
           </div>
           <!-- Unnamed (形状) -->
           <div id="u267" class="ax_default icon">
@@ -424,18 +409,18 @@ clear:both;
             <img id="u268_img" class="img " src="../image/images1/u268.png"/>
           </div>
         </div>
-        <div id="u2632" class="ax_default" data-label="1-1" data-left="55" data-top="117" data-width="191" data-height="189">
+        <div id="u2632" class="ax_default" data-label="1-1" data-left="55" data-top="117" data-width="191" data-height="189" onclick="addclick(this)" style="cursor:pointer">
             <!-- 1 (矩形) -->
             <div id="u2642" class="ax_default box_1" data-label="1">
               <div id="u2642_div" class=""></div>
             </div>
             <!-- Unnamed (文本框) -->
             <div id="u2652" class="ax_default text_field">
-              <input id="u2652_input" name="题型" type="text" value="Linux" style="cursor:pointer" onclick="addclick()"/>
+              <input id="u2652_input" name="题型" type="text" value="Linux" style="cursor:pointer"/>
             </div>
             <!-- Unnamed (文本框) -->
             <div id="u2662" class="ax_default text_field">
-              <input id="u2662_input" type="text" value="开始测试"/>
+              <input id="u2662_input" type="text" value="开始测试" style="cursor:pointer"/>
             </div>
             <!-- Unnamed (形状) -->
             <div id="u2672" class="ax_default icon">

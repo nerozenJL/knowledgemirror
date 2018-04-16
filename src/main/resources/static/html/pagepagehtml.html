@@ -1,24 +1,22 @@
-﻿<!DOCTYPE html>
-<html>
-  <head>
-    <title>页面框架</title>
-    <meta name="keywords" content="keyword1,keyword2,keyword3">
-    <meta name="description" content="this is my page">
-    <meta name="content-type" content="text/html; charset=UTF-8">
-    <script type="text/javascript">
-	window.onload = function(){
-	var user_name = sessionStorage.getItem("user_name");
-	};
-        </script>
-  </head>
-<frameset rows="90,*,10" cols="*" frameborder="1" bordercolor="#152935" noResize scrolling="auto" style="z-index:100">
-  <frame id="topFrame" name="topFrame" src="top.html" noResize scrolling="no" bordercolor="#152935" style="position:absolute; z-index:100">
-    <frameset rows="*" cols="20%,*" frameborder="1" bordercolor="rgba(21, 41, 53, 1)" style="z-index:1">
-        <frame name="left" src="left.html" target="main" bordercolor="rgba(21, 41, 53, 1)" noResize scrolling="no" style="position:absolute">
-        <frame name="main" src="computer.html" bordercolor="#152935" noResize scrolling="auto" style="position:absolute">
-    </frameset>  
-  <noframes>
-   Sorry，该浏览器不支持该页面显示，请更换其他浏览器如Google浏览器，IE浏览器......
- </noframes>
-  </frameset>
+﻿<!Doctype html>  
+<head>  
+<meta name="viewport"/>  
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">  
+<title>个人知识结构系统</title>  
+<style>  
+body{  
+    scrollbar-base-color:#C0D586;  
+    scrollbar-arrow-color:#FFFFFF;  
+    scrollbar-shadow-color:DEEFC6;  
+    width:100%;  
+    height:1100px;  
+    margin:0px;   
+    padding:0px  
+}  
+</style>  
+</head>  
+    <!--解决frameset滚动条的方法 -->  
+    <body>  
+            <iframe src="pagepage.html" scrolling="auto" frameborder="0" style="width:1388px; height:100%;border-width: 0px;" > </iframe>  
+    </body>  
 </html>

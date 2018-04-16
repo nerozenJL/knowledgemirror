@@ -1,4 +1,4 @@
-﻿//sourceMappingURL=echarts.js.map;
+﻿﻿//sourceMappingURL=echarts.js.map;
 /*var msg = {
     "html_total":"3",
     "html_right":"1",
@@ -60,9 +60,9 @@ $(document).ready(function(){
     var exitbtn = $("<button>退出</button>");
     $("#u52_input").append(exitbtn);
     exitbtn.attr("class","u53_button");
-    exitbtn.bind("click",exitbtn);
+    exitbtn.bind("click",exit);
 
-
+    
     var myChart = echarts.init(document.getElementById('sixStart')); 
     var myPie1 = echarts.init(document.getElementById('pie1')); 
     var myPie2 = echarts.init(document.getElementById('pie2'));
@@ -270,14 +270,11 @@ $(document).ready(function(){
     });
 
 
-
-})
-
-
-
 function usermsg(){
-    window.location.href = ".html";
-}
-function exitbtn(){
-    window.location.replace("login.html");
-}
+    window.top.location.href="../html/personalpage.html";
+};
+function exit(){
+    top.window.location.replace("login.html");
+};
+});
+

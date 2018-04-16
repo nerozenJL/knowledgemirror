@@ -1,7 +1,6 @@
 package gof.knowledgemirror.service;
 
 import gof.knowledgemirror.dao.UserInformationDao;
-import gof.knowledgemirror.pojos.UserEntity;
 import net.sf.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

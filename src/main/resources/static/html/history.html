@@ -1,4 +1,4 @@
-﻿<!doctype html>
+﻿﻿<!doctype html>
 <html>
 <head>
 <title>测试历史页面</title>
@@ -8,7 +8,6 @@
     <link href="../css/jquery-ui-themes.css" type="text/css" rel="stylesheet"/>
     <link href="../css/axure_rp_page.css" type="text/css" rel="stylesheet"/>
     <link href="../css/styles2.css" type="text/css" rel="stylesheet"/>
-    <link href="../files/personal_page/styles.css" type="text/css" rel="stylesheet"/>
     <link href="../css/homepagestyles.css" type="text/css" rel="stylesheet"/>
     <script src="../js/jquery-1.7.1.min.js"></script>
     <script src="../js/jquery-ui-1.8.10.custom.min.js"></script>
@@ -19,20 +18,21 @@
 			height: 100%;
 			width: 100%;
 		}
-.big{width:97%;height:590px;border-radius:10px;margin:15px;border-color:rgba(21, 41, 53, 1);background-color:#152935;}
+.big{width:97%;height:auto;border-radius:10px;margin:15px;border-color:rgba(21, 41, 53, 1);background-color:#152935;}
 .top{width:97%;height:70px;border-radius:10px;border:3px solid rgba(21, 41, 53, 1);border-color:rgba(21, 41, 53, 1);background-color:rgba(255,255,255,1);left:0%;}
-.cent{width:97%;height:300px;border-radius:10px;border:3px solid rgba(21, 41, 53, 1);border-color:rgba(21, 41, 53, 1);background-color:rgba(255,255,255,1);left:0%;}
-        tr {display: block;margin: 2px 2px 5px;}
-        input{color: #525252;
-            line-height:15px;
-            outline: 0 none;
-            padding: 5px 5px 20px 5px;
-            border-radius: 2px;
-            -webkit-border-radius: 2px;
-            -moz-border-radius: 2px;
-            -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-            background: #DFDFDF;
-            width: 100%;height: 25px;}
+.cent{width:97%;height:auto;border-radius:10px;border:3px solid rgba(21, 41, 53, 1);border-color:rgba(21, 41, 53, 1);background-color:rgba(255,255,255,1);left:0%;}
+    tr {display: block;margin: 2px 2px 5px;}
+    input{color: #525252;
+        line-height:15px;
+        outline: 0 none;
+        padding: 5px 5px 20px 5px;
+        border-radius: 2px;
+        -webkit-border-radius: 2px;
+        -moz-border-radius: 2px;
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+        background: #DFDFDF;
+        width: 150px;height: 30px;}
+input:hover {color:rgba(21, 41, 53, 1);border:3px solid rgba(21, 41, 53, 1);}
     </style>
 
 </head>
@@ -70,16 +70,14 @@
                     console.log(jqXHR.status);
                     // console.log(textStatus);
                     //console.log(errorThrown);
-		//alert("Sorry，测试历史查询失败");
-		//window.location.href="#personal.html";
+		alert("Sorry，测试历史查询失败");
+		//window.top.location.href="pagepagehtml.html";
             },  
-            success: function(data) {
-                    //console.log(data);//成功
-	var order = data.times;
-	//alert(order);
-                var html="";
+            success: function(data) {                    //console.log(data);//成功
+	            var order = data.times;
+	            var html="";
 	for(var i=1;i<=order;i++)
-	{   var div =" <tr><td align='right'>顺序:</td><td><input id="+i+" style={cursor:pointer} onclick='addclick(this)' type='button' name='times'"+" value='第"+i+"次' readonly></td></tr>";
+	{   var div =" <tr><td align='right'>测试顺序:</td><td><input id="+i+" style={cursor:pointer} onclick='addclick(this)' type='button' name='times'"+" value='&nbsp;第"+i+"次&nbsp;' readonly></td></tr>";
 		html+=div;
 	}
 	$("#times").html(html);
@@ -87,6 +85,7 @@
         },  
         });
         });
+
         function addclick(e) {
             var time = $(e).attr("id");
             //var id=sessionStorage.setItem("id",time);

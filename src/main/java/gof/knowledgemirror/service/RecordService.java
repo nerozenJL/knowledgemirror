@@ -43,13 +43,17 @@ public class RecordService {
         modelMap.put("ajax_right",answerScore.getAjax_score());
         modelMap.put("js_total",amount);
         modelMap.put("js_right",answerScore.getJs_score());
-        modelMap.put("jqury_total",amount);
-        modelMap.put("jqury_right",answerScore.getJqury_score());
+        modelMap.put("jquery_total",amount);
+        modelMap.put("jquery_right",answerScore.getJqury_score());
         int score1 = answerScore.getCom_net_score() + answerScore.getCom_org_score() +
                 answerScore.getData_structure_score() + answerScore.getOs_score();
         int score2 = answerScore.getAnalogy_score() + answerScore.getNumber_score() + answerScore.getComprehension_score();
-        modelMap.put("pre_base",score1);
-        modelMap.put("base",score2);
+        int pre_base=8;
+        int base=6;
+        modelMap.put("pre_base_total",pre_base);
+        modelMap.put("pre_base_right",score1);
+        modelMap.put("base_total",base);
+        modelMap.put("base_right",score2);
         modelMap.put("text",answerScore.getText());
         return modelMap;
     }

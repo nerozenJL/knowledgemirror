@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <title>个人知识结构体系</title>
+    <meta name="keywords" content="keyword1,keyword2,keyword3">
+    <meta name="description" content="this is my page">
+    <meta name="content-type" content="text/html; charset=UTF-8">
+    <script type="text/javascript">
+	window.onload = function(){
+	var user_name = sessionStorage.getItem("user_name");
+  };
+        </script>
+  </head>
+<frameset id="zhuye" rows="90,*" cols="*" frameborder="1" bordercolor="#152935" noResize scrolling="auto" style="z-index:100">
+  <frame id="topFrame" name="topFrame" src="top.html" noResize scrolling="no" bordercolor="#152935" style="position:absolute; z-index:100">
+    <frameset rows="*" cols="20%,*" frameborder="1" bordercolor="rgba(21, 41, 53, 1)" style="z-index:1">
+        <frame name="left" src="left.html" target="main" bordercolor="rgba(21, 41, 53, 1)" noResize scrolling="no" style="position:absolute">
+        <frame name="main" src="computer.html" bordercolor="#152935" noResize scrolling="no" style="position:absolute">
+    </frameset>  
+  <noframes>
+   Sorry，该浏览器不支持该页面显示，请更换其他浏览器如Google浏览器，IE浏览器......
+ </noframes>
+  </frameset>
+</html>

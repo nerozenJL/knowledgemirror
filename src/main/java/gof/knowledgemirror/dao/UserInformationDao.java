@@ -1,6 +1,5 @@
 package gof.knowledgemirror.dao;
 
-import gof.knowledgemirror.pojos.UserEntity;
 import org.springframework.stereotype.Repository;
 
 @Repository

@@ -1,6 +1,5 @@
 package gof.knowledgemirror.controllers;
 
-import gof.knowledgemirror.pojos.UserEntity;
 import gof.knowledgemirror.service.UserInformationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
